@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 This project is being developped using the following resources/tools
 
-###phpStorm
+#### phpStorm
 ```
 Download: 	https://www.jetbrains.com/student/
 
@@ -20,7 +20,7 @@ Download: 	https://www.jetbrains.com/student/
 
 ```
 
-###XAMPP
+#### XAMPP
 ```
 XAMPP: 		https://www.apachefriends.org/index.html
 
