@@ -11,10 +11,20 @@
 	</body>
 
 	<footer>
-		<script type="text/javascript" src="scripts/three.js"></script>
-        <script type="text/javascript" src="scripts/OrbitControls.js"></script>
-        <script type="text/javascript" src="scripts/dat.gui.min.js"></script>
-		<script type="text/javascript" src="scripts/main.js"></script>
+        <!-- 3RD Party Libraries -->
+        <script type="text/javascript" src="scripts/lib/three.js"></script>
+        <script type="text/javascript" src="scripts/lib/STLLoader.js"></script>
+        <script type="text/javascript" src="scripts/lib/dat.gui.min.js"></script>
+        <script type="text/javascript" src="scripts/lib/orbit.controls.js"></script>
+
+        <!-- ... -->
+        <script type="text/javascript" src="scripts/controllers/model.controller.js"></script>
+        <script type="text/javascript" src="scripts/controllers/camera.controller.js"></script>
+        <script type="text/javascript" src="scripts/controllers/object.controller.js"></script>
+        <script type="text/javascript" src="scripts/controllers/renderer.controller.js"></script>
+
+
+        <script type="text/javascript" src="scripts/main.js"></script>
 	</footer>
 </html>
 
