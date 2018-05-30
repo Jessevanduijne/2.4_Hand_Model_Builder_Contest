@@ -1,7 +1,7 @@
 # Project 100 Hands
 This is the repository containing the sourcecode for the 100 Hands initiative.
 
-###Suggestion:
+### Suggestion:
 I would like to suggest to try and follow the things written below. I am curious to hear what you all 
 think.
 
