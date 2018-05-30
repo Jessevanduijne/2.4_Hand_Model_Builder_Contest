@@ -1,7 +1,7 @@
 function createRenderer(elementId, w, h, color)
 {
     //Create renderer
-    var renderer = new THREE.WebGLRenderer();
+    var renderer = new THREE.WebGLRenderer({ alpha: true });
     //Set renderer size
     renderer.setSize(w, h);
     //Set renderer background color

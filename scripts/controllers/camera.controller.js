@@ -1,5 +1,5 @@
 //Create camera
-function createCamera(x, y, z, perspective, ratio, nearClipping, farClipping)
+function createCamera(x, y, z, perspective, ratio, nearClipping, farClipping, gui)
 {
     var camera = new THREE.PerspectiveCamera(
         perspective,
@@ -23,7 +23,7 @@ function setCameraPosition(camera, x, y, z)
     camera.position.y = y;
     camera.position.z = z;
 
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.lookAt(new THREE.Vector3(x, y, z));
 }
 
 function createOrbitController(camera, renderer)

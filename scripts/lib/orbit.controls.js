@@ -497,7 +497,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
     function handleMouseMovePan( event ) {
 
-        //console.log( 'handleMouseMovePan' );
+        console.log( 'handleMouseMovePan' );
 
         panEnd.set( event.clientX, event.clientY );
 

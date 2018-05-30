@@ -2,50 +2,61 @@ window.onload = init;
 
 function init()
 {
+    //Create dat.gui instance (Allows for easy property manipulation in the browser)
+    var gui = new dat.GUI();
+
     //Create scene
     var scene = new THREE.Scene();
 
     //Create camera
-    var camera = createCamera(0, 1, 9, 45, window.innerWidth/window.innerHeight, 1, 1000);
-
-    //Create a square plane
-    var plane = createPlane(20, 'blue');
-    rotateObject(plane, -90, 0, 0);
-
-    //Hardcoded File Path:
-    var path = 'models/knuckles.stl';
+    var camera = createCamera
+    (
+        10,             //x position
+        1,              //y position
+        0,              //z position
+        30,             //perspective
+        (1080/1920),    //ratio (1 == original size)
+        1,              //Near field clipping plane
+        2000,           //Far field clipping plane
+        gui             //GUI object
+    );
 
     //Load the model
-    var model = loadModel(scene, path, 'red');
-
-    //Create dat.gui instance (Allows for easy property manipulation in the browser)
-    var gui = new dat.GUI();
+    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
 
     //Create a light source (& sphere to visualize source)
-    var light = createPointLight(1, 1, 2, 2, gui);
-    var sphere = createSphere(0.05);
+    var light = createPointLight(0.8, 1, 2, 2, gui);
 
     //Add all models to the scene
     scene.add(camera);
-    scene.add(plane);
-    scene.add(model);
-    scene.add(gui);
 
-    //Add a light source to the scene & visualize it with a sphere
-    scene.add(light);
-    light.add(sphere);
+    //Add a light source to the camera
+    camera.add(light);
 
-    var renderer = createRenderer('scene', window.innerWidth*0.9, window.innerWidth*0.9, 'gray');
+    var renderer = createRenderer
+    (
+        'scene',            //Scene name
+        1080,               //Width
+        1920,               //Height
+        BACKGROUND_COLOR    //Background color
+    );
+
     var orbitControl = createOrbitController(camera, renderer);
 
+    //Disable the use of the arrow keys on the keyboard
+    orbitControl.enableKeys = false;
+    //Disable panning the orbit controller (relative to the model)
+    orbitControl.enablePan = false;
+
     //Update the renderer, scene and camera
-    update(renderer, scene, camera, orbitControl    );
+    update(renderer, scene, camera, orbitControl);
 }
 
 function update(renderer, scene, camera, control)
 {
     //Make the renderer render the scene and the camera
-    renderer.render(
+    renderer.render
+    (
         scene,
         camera
     );
@@ -60,17 +71,3 @@ function update(renderer, scene, camera, control)
     });
 }
 
-function createSphere(radius)
-{
-    var object = new THREE.SphereGeometry(radius, 24, 24);
-    var material = new THREE.MeshBasicMaterial
-    ({
-        color: 'white'
-    });
-
-    var mesh = new THREE.Mesh(object, material);
-
-    console.log("LOG: Box created");
-    return mesh;
-    //scene.add(mesh);
-}
