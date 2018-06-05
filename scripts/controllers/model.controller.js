@@ -31,6 +31,7 @@ function loadModel(scene, path, color='gray', scale)
         model.scale.z = scale;
 
         //Set model position
+        model.position.x = 0;
         model.position.y = -0.2;
         model.position.z = 0;
 

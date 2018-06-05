@@ -31,8 +31,8 @@ function createOrbitController(camera, renderer)
     return new THREE.OrbitControls(camera, renderer.domElement);
 }
 
-//Load camera
-
-//Update camera
-
-//Delete camera
+function onWindowResize(camera, renderer) {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}

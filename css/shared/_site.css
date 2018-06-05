@@ -1,0 +1,40 @@
+/*
+    This page contains all CSS that is shared throughout the entire website.
+    Think of styles of buttons, text boxes, drop down menu's, etc. These
+    elements should be the same throughout the entire website and can be defined
+    here.
+    If you make changes on parts that are not your own, notify the group of the changes
+    and state the reason why.
+*/
+
+body
+{
+    background-color: #eaeaea;
+}
+
+/*The area in which the GUI panel can be moved*/
+#gui-frame
+{
+    position: absolute;
+    width: 90%;
+    height: 28%;
+    background-color: rgba(0, 0, 0, 0.39);
+    left: 5%;
+    top: 70%;
+}
+#gui-frame iframe
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+/*The GUI panel itself*/
+#gui-container
+{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 90%;
+    z-index: 10;
+}
