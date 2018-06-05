@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8417895e-ae3f-40d9-be43-f17627983495" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/shared/_site.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/shared/_site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Hand_Fist.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/Hand_Fist.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Hand_Shaka.png" beforeDir="false" afterPath="$PROJECT_DIR$/models/Hand_Shaka.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/controllers/model.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/controllers/model.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/controllers/object.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/controllers/object.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/global.js.variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/global.js.variables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/model_viewer/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/model_viewer/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/model_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/model_view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +38,8 @@
       <file leaf-file-name="model.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/model.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+            <state relative-caret-position="459">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -61,8 +59,8 @@
       <file leaf-file-name="_site.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/shared/_site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+            <state relative-caret-position="-14">
+              <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -155,11 +153,11 @@
         <option value="$PROJECT_DIR$/scripts/controllers/gui.controller.js" />
         <option value="$PROJECT_DIR$/views/model_view.php" />
         <option value="$PROJECT_DIR$/scripts/controllers/camera.controller.js" />
-        <option value="$PROJECT_DIR$/css/shared/_site.css" />
         <option value="$PROJECT_DIR$/scripts/global.js.variables.js" />
         <option value="$PROJECT_DIR$/../Project2.4-master/scripts/controllers/model.controller.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/object.controller.js" />
         <option value="$PROJECT_DIR$/scripts/model_viewer/main.js" />
+        <option value="$PROJECT_DIR$/css/shared/_site.css" />
         <option value="$PROJECT_DIR$/scripts/controllers/model.controller.js" />
       </list>
     </option>
@@ -174,7 +172,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+    <option name="x" value="905" />
+    <option name="y" value="126" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -251,15 +250,15 @@
       <workItem from="1527685910133" duration="18008000" />
       <workItem from="1528193302551" duration="398000" />
       <workItem from="1528194007824" duration="5061000" />
-      <workItem from="1528200824134" duration="3029000" />
+      <workItem from="1528200824134" duration="4697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58716000" />
+    <option name="totallyTimeSpent" value="60384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="905" y="126" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26304802" />
@@ -545,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/shared/_site.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Project2.4-master/scripts/controllers/model.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -586,10 +578,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/shared/_site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/model.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        <state relative-caret-position="459">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
         </state>
       </provider>
     </entry>
