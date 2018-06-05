@@ -2,39 +2,42 @@
 //All functionality within this class is dedicated to manipulating the loaded model.
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, color='gray', scale)
-{
+function loadModel(scene, path, color='gray', scale) {
     //Create a new STLLoader
-    var loader = new THREE.STLLoader();
+    var loader = new THREE.OBJLoader();
 
     //Load the STL-file using the path
-    loader.load(path, function (geometry)
-    {
+    loader.load(path, function (geometry) {
         //Create a new material
         var material = new THREE.MeshPhongMaterial
         ({
             color: color
         });
 
-        //Create a mesh
-        var model = new THREE.Mesh(geometry, material);
+
 
         //Add the mesh to the scene
-        scene.add(model);
+        scene.add(geometry);
 
         //Rotate the custom model
-        rotateObject(model, -90, 0, 0);
+        //rotateObject(geometry, -90, 0, 0);
 
         //Scale the custom model
-        model.scale.x = scale;
-        model.scale.y = scale;
-        model.scale.z = scale;
+        geometry.scale.set(0.03, 0.03, 0.03);
 
         //Set model position
-        model.position.y = -0.2;
-        model.position.z = 0;
+        geometry.position.y = -0.2;
+        geometry.position.z = 0;
+
+        geometry.name = "loadedModel"
 
         console.log('LOG: Model loaded');
-        return model;
+
+        return geometry;
     });
+}
+
+function updateModel(scene){
+    removeObject("loadedModel");
+    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
 }

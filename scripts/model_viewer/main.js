@@ -1,43 +1,51 @@
 window.onload = init;
+var scene = new THREE.Scene();
 
+//The function that is run once when the page loads
 function init()
 {
-    //Create dat.gui instance (Allows for easy property manipulation in the browser)
-    var gui = new dat.GUI();
+    //Create a new (more flexible) GUI panel
+    var gui = new dat.GUI({ autoPlace: false });
+
+    var customContainer = document.getElementById('gui-container');
+    customContainer.appendChild(gui.domElement);
 
     //Create scene
-    var scene = new THREE.Scene();
+     scene = new THREE.Scene();
 
     //Create camera
     var camera = createCamera
     (
-        10,             //x position
-        1,              //y position
+        3,              //x position
+        -2,             //y position
         0,              //z position
-        30,             //perspective
-        (1080/1920),    //ratio (1 == original size)
+        45,             //perspective
+        WINDOW_RATIO,    //ratio (1 == original size)
         1,              //Near field clipping plane
         2000,           //Far field clipping plane
         gui             //GUI object
     );
 
     //Load the model
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    var geometry = loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
 
     //Create a light source (& sphere to visualize source)
-    var light = createPointLight(0.8, 1, 2, 2, gui);
-
-    //Add all models to the scene
-    scene.add(camera);
+    var light = createPointLight(0.8, 1, 2, 2);
 
     //Add a light source to the camera
     camera.add(light);
 
+
+    //Add all models to the scene
+    scene.add(camera);
+
+
+
     var renderer = createRenderer
     (
         'scene',            //Scene name
-        1080,               //Width
-        1920,               //Height
+        window.innerWidth,  //Width
+        window.innerHeight, //Height
         BACKGROUND_COLOR    //Background color
     );
 
@@ -52,8 +60,11 @@ function init()
     update(renderer, scene, camera, orbitControl);
 }
 
+//The function that serves as an endless loop, allowing for animations and dynamic changes in the render
 function update(renderer, scene, camera, control)
 {
+    onWindowResize(camera, renderer);
+
     //Make the renderer render the scene and the camera
     renderer.render
     (
@@ -70,4 +81,5 @@ function update(renderer, scene, camera, control)
         update(renderer, scene, camera, control);
     });
 }
+
 
