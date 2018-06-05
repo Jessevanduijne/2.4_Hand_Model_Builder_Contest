@@ -1,3 +1,5 @@
+var THREEx = THREEx || {};
+
 //Create camera
 function createCamera(x, y, z, perspective, ratio, nearClipping, farClipping, gui)
 {
@@ -26,11 +28,13 @@ function setCameraPosition(camera, x, y, z)
     camera.lookAt(new THREE.Vector3(x, y, z));
 }
 
+//Create orbit functionality to the camera
 function createOrbitController(camera, renderer)
 {
     return new THREE.OrbitControls(camera, renderer.domElement);
 }
 
+//Make the camera & renderer responsive to screen size
 function onWindowResize(camera, renderer) {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();

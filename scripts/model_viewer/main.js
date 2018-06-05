@@ -53,7 +53,8 @@ function init()
     orbitControl.enablePan = false;
 
     gui.add(light, 'intensity', 0.01, 10);
-    //gui.add(model.rotation, 'z', 0, 10);
+
+    createScreenshotButton(renderer, scene, camera);
 
     //Update the renderer, scene and camera
     update(renderer, scene, camera, orbitControl);
