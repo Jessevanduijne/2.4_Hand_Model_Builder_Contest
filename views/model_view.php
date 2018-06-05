@@ -11,17 +11,53 @@
 </head>
 
 <body>
+
     <div id="mySidenav" class="sidenav">
+    <div class="tab">
+
+    <button class="tablinks" onclick="openTab(event, 'Handen')" id="default">Handen</button>
+    <button class="tablinks" onclick="openTab(event, 'Kleur')">Kleur</button>
+    <button class="tablinks" onclick="openTab(event, 'Share')">Share</button>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <h1>Models</h1>
+  </div>
+
+
+    <div id="Handen" class="tabcontent">
+    <h1>Handen</h1>
     <?php
     $files = glob("../models/*.obj");
     foreach($files as $file) {
       echo "<button class='modelclick' onclick=changeModel('",$file,"')>","<img src='../models/",basename($file, ".obj"), ".png'>","</button>";
     };
     ?>
+  </div>
+
+  <div id="Kleur" class="tabcontent">
+    <h1>Kleur</h1>
+  </div>
+
+  <div id="Share" class="tabcontent">
+    <h1>Share</h1>
+  </div>
     </div>
     <script>
+
+    function openTab(evt, tab) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tab).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      document.getElementById("default").click();
+
     /* Set the width of the side navigation to 250px */
     function changeModel(model){
       HARDCODED_3DMODEL_PATH = model;

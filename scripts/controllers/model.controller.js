@@ -26,7 +26,7 @@ function loadModel(scene, path, color='gray', scale) {
         geometry.scale.set(0.03, 0.03, 0.03);
 
         //Set model position
-        geometry.position.y = -0.2;
+        geometry.position.y = 0.3;
         geometry.position.z = 0;
 
         geometry.name = "loadedModel"
