@@ -1,0 +1,12 @@
+{
+  "Database": {
+    "username": "root",
+    "password": "",
+    "hostname": "localhost",
+    "table":"hand_test"
+  }
+  "Login":{
+    "username":"CSVN-Jo",
+    "password":"Yo"
+  }
+}
