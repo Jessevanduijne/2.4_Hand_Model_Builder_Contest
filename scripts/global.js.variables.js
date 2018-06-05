@@ -9,7 +9,12 @@
 
 console.log('LOG: Global variables loaded');
 
+//Technical Values
 var WINDOW_RATIO = window.innerWidth/window.innerHeight;
+
+//Appearances
 var BACKGROUND_COLOR = '#eaeaea';
 var DEFAULT_MODEL_COLOR = '#fffefc';
-var HARDCODED_3DMODEL_PATH = '../models/knuckles.stl';
+
+//File paths
+var HARDCODED_3DMODEL_PATH = '../models/Hand_Fist.obj';
