@@ -1,7 +1,25 @@
-<?php require_once ('./Models/db.php');
+<html>
 
-$db = new db();
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css"
+          <title>Test - 100 Handen voor Vietnam!</title>
+</head>
 
-foreach ($db->GetAllHands() as $hand){
+<body>
+
+
+<?php require_once('./Models/db_hand.php');
+
+$db = new dbHand();
+
+$hands = $db->getLeaderBoard();
+
+foreach($hands as $hand){
     echo $hand->getNaam();
 }
+
+?>
+</body>
+
+</html>
+

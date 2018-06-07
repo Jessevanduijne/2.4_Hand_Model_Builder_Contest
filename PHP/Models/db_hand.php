@@ -1,5 +1,5 @@
 <?php
-class db {
+class dbHand {
     private $hostname, $username, $password, $tablename;
     private $MySQL;
 
@@ -10,14 +10,13 @@ class db {
     private function init(){
         $str = file_get_contents("config.json", true); //Krijg gegevens van config.json file
         $json = json_decode($str, true); // zet JSON om in een PHP-array
-
         //Test de functie:
         //echo '<pre>' . print_r($json, true) . '</pre>';
 
         return new mysqli($json['Database']['hostname'], $json['Database']['username'], $json['Database']['password'], $json['Database']['table']);
     }
 
-    public function GetAllHands(){
+    public function getAllHands(){
         //Hand model inladen
         require_once ('hand.php');
         $hands = array();
@@ -27,9 +26,12 @@ class db {
         //Query gebruiken
         $result = $this->MySQL->query($query);
 
-        if ($result->num_rows > 0) {
+        if ($result) {
             while ($row = $result->fetch_object()) {
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->gif, $row->date);
+
+                echo $row->naam;
+
+                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -44,13 +46,13 @@ class db {
         $hands = array();
 
         //Query klaarzetten
-        $query = "SELECT * from hands ORDER BY score DESC LIMIT 100;";
+        $query = "SELECT * FROM hands ORDER BY score DESC LIMIT 100";
         //Query gebruiken
         $result = $this->MySQL->query($query);
 
-        if ($result->num_rows > 0) {
+        if($result) {
             while ($row = $result->fetch_object()) {
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->gif, $row->date);
+                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -60,13 +62,13 @@ class db {
 
     public function getById($id){
         require_once ('hand.php');
-        $query = "SELECT * FROM hands WHERE id = ".mysqli_escape_string($id);
+        $query = "SELECT * FROM 'hands' WHERE id = ".mysqli_escape_string($id);
         $hand = null;
         $result = $this->MySQL->query($query);
 
-        if($result->num_rows > 0){
+        if($result){
             while($row = $result->fetch_object()){
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->gif, $row->date);
+                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
             }
             $this->MySQL->close();
             return $hand;

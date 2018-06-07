@@ -1,16 +1,16 @@
 <?php
 class hand
 {
-    private $id, $naam, $email, $score, $image_ref, $gif_ref, $date;
+    private $id, $naam, $email, $score, $image_ref, $object, $date;
 
-    public function __construct($id, $naam, $email, $score, $image_ref, $gif_ref, $date)
+    public function __construct($id, $naam, $email, $score, $image_ref, $object, $date)
     {
         $this->id = $id;
         $this->naam = $naam;
         $this->email = $email;
         $this->score = $score;
         $this->image_ref = $image_ref;
-        $this->gif_ref = $gif_ref;
+        $this->object = $object;
         $this->date = $date;
     }
 
@@ -29,9 +29,9 @@ class hand
     {
         return $this->date;
     }
-    public function getGifRef()
+    public function getObject()
     {
-        return $this->gif_ref;
+        return $this->object;
     }
     public function getImageRef()
     {
