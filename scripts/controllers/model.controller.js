@@ -2,7 +2,7 @@
 //All functionality within this class is dedicated to manipulating the loaded model.
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, color='gray', scale) {
+function loadModel(scene, path, modelColor, scale) {
     //Create a new STLLoader
     var loader = new THREE.OBJLoader();
 
@@ -11,7 +11,7 @@ function loadModel(scene, path, color='gray', scale) {
         //Create a new material
         var material = new THREE.MeshPhongMaterial
         ({
-            color: color
+            color: modelColor
         });
 
 
@@ -37,7 +37,7 @@ function loadModel(scene, path, color='gray', scale) {
     });
 }
 
-function updateModel(scene){
+function updateModel(scene, modelColor){
     removeObject("loadedModel");
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    loadModel(scene, HARDCODED_3DMODEL_PATH, modelColor, 0.014);
 }

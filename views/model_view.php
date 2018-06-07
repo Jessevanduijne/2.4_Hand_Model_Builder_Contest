@@ -16,7 +16,7 @@
     <div class="tab">
 
     <button class="tablinks" onclick="openTab(event, 'Handen')" id="default">Handen</button>
-    <button class="tablinks" onclick="openTab(event, 'Kleur')">Kleur</button>
+    <button class="tablinks" onclick="openTab(event, 'Kleur')">Personaliseren</button>
     <button class="tablinks" onclick="openTab(event, 'Share')">Share</button>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   </div>
@@ -32,8 +32,29 @@
     ?>
   </div>
 
+  <!-- Set the width of the side navigation to 250px -->
+  <!-- kayleigh -->
   <div id="Kleur" class="tabcontent">
-    <h1>Kleur</h1>
+    <h2>Kleur</h2>
+
+    <form>
+      Achtergrondkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()">
+      Tekenkleur : <input type="color" name="draw_color" onchange="startDrawing()">
+      <button type="button" onclick="stopDrawing()">Stop</button>
+    </form>
+
+    <h2>Tekst</h2>
+    <form>
+      <input type="text">
+      <input type="submit">
+      <input type="reset">
+    </form>
+
+    <h2>Afbeelding</h2>
+    <form action="/Customize.php" method="post">
+      <input type="file" name="UserImage"accept="image/*">
+      <button type="submit" value="Submit">Voeg toe</button>
+      <button type="reset" value="Reset">Reset</button>
   </div>
 
   <div id="Share" class="tabcontent">
@@ -63,6 +84,13 @@
       HARDCODED_3DMODEL_PATH = model;
       console.log(HARDCODED_3DMODEL_PATH);
       updateModel(scene);
+    }
+
+    /* kayleigh */
+    function changeBGColor(){
+      modelColor = document.getElementById("changedColor").value;
+      console.log(modelColor);
+      updateModel(scene, modelColor);
     }
 
     function openNav() {
