@@ -81,5 +81,3 @@ function update(renderer, scene, camera, control)
         update(renderer, scene, camera, control);
     });
 }
-
-

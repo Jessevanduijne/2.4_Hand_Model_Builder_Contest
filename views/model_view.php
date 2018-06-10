@@ -51,9 +51,8 @@
     </form>
 
     <h2>Afbeelding</h2>
-    <form action="/Customize.php" method="post">
-      <input type="file" name="UserImage"accept="image/*">
-      <button type="submit" value="Submit">Voeg toe</button>
+    <form>
+      <input type="file" accept="image/*" id="UserImage" accept="image/*" onchange="">
       <button type="reset" value="Reset">Reset</button>
   </div>
 
@@ -83,14 +82,14 @@
     function changeModel(model){
       HARDCODED_3DMODEL_PATH = model;
       console.log(HARDCODED_3DMODEL_PATH);
-      updateModel(scene);
+      updateModel(scene, DEFAULT_MODEL_COLOR);
     }
 
     /* kayleigh */
     function changeBGColor(){
-      modelColor = document.getElementById("changedColor").value;
-      console.log(modelColor);
-      updateModel(scene, modelColor);
+      DEFAULT_MODEL_COLOR = document.getElementById("changedColor").value;
+      console.log(DEFAULT_MODEL_COLOR);
+      updateModel(scene, DEFAULT_MODEL_COLOR);
     }
 
     function openNav() {
