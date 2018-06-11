@@ -1,7 +1,10 @@
+
+let renderer = null;
+
 function createRenderer(elementId, w, h, color)
 {
     //Create renderer
-    var renderer = new THREE.WebGLRenderer
+    renderer = new THREE.WebGLRenderer
     ({
         alpha: true,
         preserveDrawingBuffer: true
@@ -13,40 +16,17 @@ function createRenderer(elementId, w, h, color)
     //Enable renderer shadows
     renderer.shadowMap.enabled = true;
     //Grab the element on which the canvas needs to be rendered
-    document.getElementById(elementId).appendChild(renderer.domElement);
+    console.log(elementId);
+    //Grab the provided element and append the renderer
+    $('#'+elementId).append(renderer.domElement);
 
     return renderer;
 }
 
-//Create a button that allows for taking screenshots
-function createScreenshotButton(renderer, scene, camera)
+//Save the screenshot
+function save()
 {
-    var button = document.createElement('input');
-    button.innerHTML = "Take screenshot";
-    button.type = "button";
-    button.id = "get-snapshot";
-    button.value = "Take Screenshot";
-
-    button.addEventListener('click', function()
-    {
-        createModelSnapshot(renderer, scene, camera);
-    });
-
-    document.body.appendChild(button);
-}
-
-//Create the screenshot
-function createModelSnapshot(renderer, scene, camera)
-{
-    //Open in new window like this
-    var w = window.open('', '');
-    w.document.title = "Screenshot";
-    //w.document.body.style.backgroundColor = "red";
-    var img = new Image();
-    // Without 'preserveDrawingBuffer' set to true, we must render now
-    renderer.render(scene, camera);
-    img.src = renderer.domElement.toDataURL();
-    w.document.body.appendChild(img);
-
-    console.log("LOG: Screenshot Created");
+    //Set the value of the hidden image to a snapshot of the renderer
+    $("#hidden_image").val(renderer.domElement.toDataURL('image/png'));
+    $("#image-form").submit();
 }

@@ -16,10 +16,10 @@ function init()
     var camera = createCamera
     (
         3,              //x position
-        -2,             //y position
+        0,             //y position
         0,              //z position
         45,             //perspective
-        WINDOW_RATIO,    //ratio (1 == original size)
+        WINDOW_RATIO,   //ratio (1 == original size)
         1,              //Near field clipping plane
         2000,           //Far field clipping plane
         gui             //GUI object
@@ -54,10 +54,24 @@ function init()
 
     gui.add(light, 'intensity', 0.01, 10);
 
-    createScreenshotButton(renderer, scene, camera);
-
     //Update the renderer, scene and camera
     update(renderer, scene, camera, orbitControl);
+
+    var savedImage = createScreenshotButton(renderer, scene, camera);
+
+    if(savedImage != null)
+    {
+        var img = document.createElement('img');
+        img.src = savedImage;
+
+        var target = document.getElementById("image-container");
+        target.appendChild(img);
+    }
+    else
+    {
+        var img = document.getElementById("image-container");
+        console.log("LOG: Image could not be found");
+    }
 }
 
 //The function that serves as an endless loop, allowing for animations and dynamic changes in the render

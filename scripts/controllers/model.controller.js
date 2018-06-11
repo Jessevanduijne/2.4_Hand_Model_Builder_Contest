@@ -32,7 +32,7 @@ function loadModel(scene, path, color='gray', scale)
 
         //Set model position
         model.position.x = 0;
-        model.position.y = -0.2;
+        model.position.y = -0.5;
         model.position.z = 0;
 
         console.log('LOG: Model loaded');

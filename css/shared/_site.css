@@ -24,8 +24,14 @@ body
 
 #get-snapshot
 {
-    position: relative;
-    bottom: 50px;
+    position: absolute;
+    bottom: 50%;
+}
+
+#upload-snapshot
+{
+    position: absolute;
+    bottom: 40%;
 }
 
 #snapshot-link
@@ -33,4 +39,31 @@ body
     position: relative;
     top: -4.8em;
     left: 9em;
+}
+input[type="text"] {
+    width: 260px;
+}
+
+form#image-form {
+opacity: 1;
+overflow: visible;
+position: fixed;
+bottom: 25px;
+left: 37vw;
+}
+
+.responsetext {
+    opacity: 1;
+    overflow: visible;
+    position: fixed;
+    bottom: 200px;
+    left: 37vw;
+}
+
+.responsepath {
+    opacity: 1;
+    overflow: visible;
+    position: fixed;
+    bottom: 150px;
+    left: 37vw;
 }
