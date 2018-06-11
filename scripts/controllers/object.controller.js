@@ -21,3 +21,9 @@ function createPointLight(intensity, x, y, z, gui)
     console.log('LOG: Point light created')
     return light;
 }
+
+function removeObject(object)
+{
+    var selectedObject = scene.getObjectByName(object);
+    scene.remove( selectedObject );
+}

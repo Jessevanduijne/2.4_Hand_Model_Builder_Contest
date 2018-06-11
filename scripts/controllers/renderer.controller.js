@@ -9,6 +9,7 @@ function createRenderer(elementId, w, h, color)
         alpha: true,
         preserveDrawingBuffer: true
     });
+
     //Set renderer size
     renderer.setSize(w, h);
     //Set renderer background color

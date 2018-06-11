@@ -17,4 +17,4 @@ var BACKGROUND_COLOR = '#eaeaea';
 var DEFAULT_MODEL_COLOR = '#fffefc';
 
 //File paths
-var HARDCODED_3DMODEL_PATH = '../models/knuckles.stl';
+var HARDCODED_3DMODEL_PATH = '../models/Hand_Fist.obj';

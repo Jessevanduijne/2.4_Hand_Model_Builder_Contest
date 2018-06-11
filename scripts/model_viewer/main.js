@@ -1,49 +1,52 @@
 window.onload = init;
+var scene = new THREE.Scene();
 
 //The function that is run once when the page loads
 function init()
 {
     //Create a new (more flexible) GUI panel
-    var gui = new dat.GUI({ autoPlace: false });
+    var gui;
+    //= new dat.GUI({ autoPlace: false });
 
-    var customContainer = document.getElementById('gui-container');
-    customContainer.appendChild(gui.domElement);
+    //var customContainer = document.getElementById('gui-container');
+    //customContainer.appendChild(gui.domElement);
 
     //Create scene
-    var scene = new THREE.Scene();
+     scene = new THREE.Scene();
 
     //Create camera
     var camera = createCamera
     (
         3,              //x position
-        0,             //y position
+        0,              //y position
         0,              //z position
         45,             //perspective
         WINDOW_RATIO,   //ratio (1 == original size)
-        1,              //Near field clipping plane
+        0.1,              //Near field clipping plane
         2000,           //Far field clipping plane
         gui             //GUI object
     );
 
     //Load the model
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    var geometry = loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
 
     //Create a light source (& sphere to visualize source)
-    var light = createPointLight(0.8, 1, 2, 2, gui);
-
-    //Add all models to the scene
-    scene.add(camera);
+    var light = createPointLight(0.8, 1, 2, 2);
 
     //Add a light source to the camera
     camera.add(light);
 
+    //Add all models to the scene
+    scene.add(camera);
+
     var renderer = createRenderer
     (
         'scene',            //Scene name
-        window.innerWidth,  //Width
-        window.innerHeight, //Height
+        window.innerWidth/2,  //Width
+        window.innerHeight/2, //Height
         BACKGROUND_COLOR    //Background color
     );
+
 
     var orbitControl = createOrbitController(camera, renderer);
 
@@ -52,12 +55,8 @@ function init()
     //Disable panning the orbit controller (relative to the model)
     orbitControl.enablePan = false;
 
-    gui.add(light, 'intensity', 0.01, 10);
-
     //Update the renderer, scene and camera
     update(renderer, scene, camera, orbitControl);
-
-    var savedImage = createScreenshotButton(renderer, scene, camera);
 
     if(savedImage != null)
     {
@@ -78,6 +77,8 @@ function init()
 function update(renderer, scene, camera, control)
 {
     onWindowResize(camera, renderer);
+
+    renderer.setClearColor( 0x000000, 0 );
 
     //Make the renderer render the scene and the camera
     renderer.render
