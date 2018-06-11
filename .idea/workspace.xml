@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8417895e-ae3f-40d9-be43-f17627983495" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/shared/_site.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_FingerSalute.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_FingerSalute.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Fist.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Fist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Four.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Four.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Metal.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Metal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Ok.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Ok.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Ok2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Ok2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Peace.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Point.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Point.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Shaka.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Shaka.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Three.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Three.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Victory.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Victory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Zombie.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Hand_Zombie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/lib/OBJLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528748244-no-name.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528748455-no-name.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528749088-Hello.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528749254-Testt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528749315-no-name.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/user_screenshots/1528749349-MoreTesting!.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/shared/_site.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/shared/_site.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/controllers/model.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/controllers/model.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/controllers/object.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/controllers/object.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/controllers/renderer.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/controllers/renderer.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/global.js.variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/global.js.variables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/model_viewer/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/model_viewer/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/model_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/model_view.php" afterDir="false" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,20 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="model.controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="model.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/model.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="20">
+              <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/model_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="55" column="160" lean-forward="true" selection-start-line="55" selection-start-column="160" selection-end-line="55" selection-end-column="160" />
+            <state relative-caret-position="133">
+              <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -133,9 +98,9 @@
         <option value="$PROJECT_DIR$/scripts/controllers/camera.controller.js" />
         <option value="$PROJECT_DIR$/scripts/model_viewer/main.js" />
         <option value="$PROJECT_DIR$/css/shared/_site.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/model.controller.js" />
         <option value="$PROJECT_DIR$/css/shared/_site.css" />
         <option value="$PROJECT_DIR$/views/model_view.php" />
+        <option value="$PROJECT_DIR$/scripts/controllers/model.controller.js" />
       </list>
     </option>
   </component>
@@ -263,12 +228,12 @@
       <workItem from="1527685910133" duration="35503000" />
       <workItem from="1528710264618" duration="34207000" />
       <workItem from="1528749546902" duration="26000" />
-      <workItem from="1528749623306" duration="10604000" />
+      <workItem from="1528749623306" duration="10970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10368000" />
+    <option name="totallyTimeSpent" value="10734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -625,17 +590,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/model.controller.js">
+    <entry file="file://$PROJECT_DIR$/views/model_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="133">
+          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/model_view.php">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/model.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="55" column="160" lean-forward="true" selection-start-line="55" selection-start-column="160" selection-end-line="55" selection-end-column="160" />
+        <state relative-caret-position="20">
+          <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

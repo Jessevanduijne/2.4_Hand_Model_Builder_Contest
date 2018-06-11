@@ -1,5 +1,5 @@
 //This class makes use of the STLLoader library ['/scripts/lib/STLLoader.js']
-//All functionality within this class is dedicated to manipulating the loaded model.
+//All functionality within this class is dedicated to manipulating the 1
 
 //Load the model (defined by path) into the desired scene
 function loadModel(scene, path, color='gray') {
