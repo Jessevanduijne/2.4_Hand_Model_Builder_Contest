@@ -1,8 +1,8 @@
 //This class makes use of the STLLoader library ['/scripts/lib/STLLoader.js']
-//All functionality within this class is dedicated to manipulating the loaded model.
+//All functionality within this class is dedicated to manipulating the 1
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, color='gray', scale) {
+function loadModel(scene, path, color='gray') {
     //Create a new STLLoader
     var loader = new THREE.OBJLoader();
 
@@ -14,8 +14,6 @@ function loadModel(scene, path, color='gray', scale) {
             color: color
         });
 
-
-
         //Add the mesh to the scene
         scene.add(geometry);
 
@@ -23,11 +21,15 @@ function loadModel(scene, path, color='gray', scale) {
         //rotateObject(geometry, -90, 0, 0);
 
         //Scale the custom model
-        geometry.scale.set(0.03, 0.03, 0.03);
+        geometry.scale.set(0.02, 0.02, 0.02);
 
         //Set model position
-        geometry.position.y = 0.3;
+        geometry.position.x = 0;
+        geometry.position.y = 0.4;
         geometry.position.z = 0;
+
+        //Rotate object by degrees (converted from radians to degrees in method)
+        rotateObject(geometry, 0, 90, 0);
 
         geometry.name = "loadedModel"
 
@@ -39,5 +41,5 @@ function loadModel(scene, path, color='gray', scale) {
 
 function updateModel(scene){
     removeObject("loadedModel");
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR);
 }

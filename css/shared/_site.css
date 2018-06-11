@@ -9,47 +9,86 @@
 
 body
 {
-    background-color: #eaeaea;
+    overflow:hidden;
+    background: linear-gradient(-45deg, #4DA167, rgba(167, 183, 55, 0.65), #c5cbc7, rgba(124, 169, 130, 0.67), rgba(35, 166, 213, 0.66), #9fa617);
+    background-size: 500% 500%;
+    -webkit-animation: Gradient 40s ease infinite;
+    -moz-animation: Gradient 40s ease infinite;
+    animation: Gradient 40s ease infinite;
 }
 
-/*The area in which the GUI panel can be moved*/
-#gui-frame
-{
-    position: absolute;
-    width: 90%;
-    height: 28%;
-    background-color: rgba(0, 0, 0, 0.39);
-    left: 5%;
-    top: 70%;
-}
-#gui-frame iframe
-{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-}
-/*The GUI panel itself*/
+/*The GUI panel*/
 #gui-container
 {
     position: absolute;
-    top: 0px;
-    left: 80%;
+    top: 30px;
+    left: 20px;
     width: 90%;
     z-index: 10;
 }
 
+#get-snapshot
+{
+    position: absolute;
+    bottom: 50%;
+}
+
+#upload-snapshot
+{
+    position: absolute;
+    bottom: 40%;
+}
+
+#snapshot-link
+{
+    position: relative;
+    top: -4.8em;
+    left: 9em;
+}
+input[type="text"] {
+    width: 260px;
+}
+
+form#image-form {
+opacity: 1;
+overflow: visible;
+position: fixed;
+    top: 20%;
+    left: 1%;
+}
+
+.responsetext {
+    opacity: 1;
+    overflow: visible;
+    position: fixed;
+    bottom: 200px;
+    left: 37vw;
+}
+
+.responsepath {
+    opacity: 1;
+    overflow: visible;
+    position: fixed;
+    bottom: 150px;
+    left: 37vw;
+}
+
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
+    height: 80%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 10%; /* Stay at the top */
     left: 0;
-    background-color: #f1f1f1; /* Black*/
+    background-color: rgba(241, 241, 241, 0.8); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-color: white;
+    outline-color: white;
+    outline-offset: 5em;
 }
 
 /* The navigation menu links */
@@ -64,16 +103,26 @@ body
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #dadada;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: -15%;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+#tab-bar
+{
+    margin-bottom: 4em;
+}
+#nav-footer
+{
+    margin-top: 4em;
+
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -89,13 +138,26 @@ body
 }
 
 .modelclick{
-    background: #b9bbbe;
+    background: rgba(185, 187, 190, 0);
     width: 30%;
     height: 30%;
     overflow: hidden;
     display: inline-block;
     margin: 5px;
     border-radius: 5px;
+}
+
+button #selectable-hand
+{
+    border-color: #6c757d;
+    border-width: 1px;
+    box-shadow: none;
+}
+
+button #selectable-hand:hover
+{
+    border-color: white;
+    border-width: 1em;
 }
 
 .modelclick img{
@@ -105,33 +167,109 @@ body
 
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: rgba(241, 0, 209, 0);
 }
 
 .tab button {
     background-color: inherit;
+    background-color: rgba(159, 166, 23, 0.51);
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: rgba(159, 166, 23, 0.51);
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #9FA617;
+    background-color: rgba(241, 241, 241, 0);
+    border-bottom: none;
+    color: #6c757d;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
+}
+
+span.glyphicon-align-justify
+{
+    font-size: 2em;
+    color: white;
+    left: 1em;
+    top: 15%;
+    position: absolute;
+}
+
+/*Bootstrap Additions*/
+.scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: rgba(255, 255, 255, 0);
+    overflow-y: scroll;
+    margin-bottom: 25px;
+
+}
+.force-overflow {
+    min-height: 450px;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(245, 245, 245, 0);
+    border-radius: 200px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(159, 166, 23, 0.51);
+    height: 90%;
+}
+
+/*Gradient Background*/
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
