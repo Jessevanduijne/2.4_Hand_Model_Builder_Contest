@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato"/>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
 <div id="scene"></div>
     <div id="gui-container"></div>
 
@@ -109,6 +108,8 @@
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
     <script type="text/javascript" src="../scripts/lib/jQuery.js"></script>
     <script type="text/javascript" src="../scripts/lib/guid.generator.js"></script>
+
+
 
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
 

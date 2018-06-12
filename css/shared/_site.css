@@ -17,6 +17,7 @@ body
     animation: Gradient 40s ease infinite;
 }
 
+
 /*The GUI panel*/
 #gui-container
 {
@@ -236,6 +237,8 @@ span.glyphicon-align-justify
     background-color: rgba(159, 166, 23, 0.51);
     height: 90%;
 }
+
+
 
 /*Gradient Background*/
 @-webkit-keyframes Gradient {
