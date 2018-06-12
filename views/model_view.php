@@ -87,9 +87,9 @@
 
     /* kayleigh */
     function changeBGColor(){
-      DEFAULT_MODEL_COLOR = document.getElementById("changedColor").value;
-      console.log(DEFAULT_MODEL_COLOR);
-      updateModel(scene, DEFAULT_MODEL_COLOR);
+      modelColor = document.getElementById("changedColor").value;
+      console.log();
+      updateModel(scene, modelColor);
     }
 
     function openNav() {

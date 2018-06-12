@@ -2,16 +2,15 @@
 //All functionality within this class is dedicated to manipulating the loaded model.
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, DEFAULT_MODEL_COLOR, scale) {
+function loadModel(scene, path, modelColor, scale) {
     //Create a new STLLoader
     var loader = new THREE.OBJLoader();
-
     //Load the STL-file using the path
     loader.load(path, function (geometry) {
         //Create a new material
         var material = new THREE.MeshPhongMaterial
         ({
-            color: DEFAULT_MODEL_COLOR
+            color: modelColor
         });
         // kayleigh
         geometry.traverse(function(child){
@@ -42,7 +41,7 @@ function loadModel(scene, path, DEFAULT_MODEL_COLOR, scale) {
     });
 }
 
-function updateModel(scene, DEFAULT_MODEL_COLOR){
+function updateModel(scene, modelColor){
     removeObject("loadedModel");
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    loadModel(scene, HARDCODED_3DMODEL_PATH, modelColor, 0.014);
 }
