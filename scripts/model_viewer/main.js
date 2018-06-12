@@ -5,10 +5,11 @@ var scene = new THREE.Scene();
 function init()
 {
     //Create a new (more flexible) GUI panel
-    var gui = new dat.GUI({ autoPlace: false });
+    var gui;
+    //= new dat.GUI({ autoPlace: false });
 
-    var customContainer = document.getElementById('gui-container');
-    customContainer.appendChild(gui.domElement);
+    //var customContainer = document.getElementById('gui-container');
+    //customContainer.appendChild(gui.domElement);
 
     //Create scene
      scene = new THREE.Scene();
@@ -17,11 +18,11 @@ function init()
     var camera = createCamera
     (
         3,              //x position
-        -2,             //y position
+        0,              //y position
         0,              //z position
         45,             //perspective
-        WINDOW_RATIO,    //ratio (1 == original size)
-        1,              //Near field clipping plane
+        WINDOW_RATIO,   //ratio (1 == original size)
+        0.1,              //Near field clipping plane
         2000,           //Far field clipping plane
         gui             //GUI object
     );
@@ -35,19 +36,17 @@ function init()
     //Add a light source to the camera
     camera.add(light);
 
-
     //Add all models to the scene
     scene.add(camera);
-
-
 
     var renderer = createRenderer
     (
         'scene',            //Scene name
-        window.innerWidth,  //Width
-        window.innerHeight, //Height
+        window.innerWidth/2,  //Width
+        window.innerHeight/2, //Height
         BACKGROUND_COLOR    //Background color
     );
+
 
     var orbitControl = createOrbitController(camera, renderer);
 
@@ -58,12 +57,28 @@ function init()
 
     //Update the renderer, scene and camera
     update(renderer, scene, camera, orbitControl);
+
+    if(savedImage != null)
+    {
+        var img = document.createElement('img');
+        img.src = savedImage;
+
+        var target = document.getElementById("image-container");
+        target.appendChild(img);
+    }
+    else
+    {
+        var img = document.getElementById("image-container");
+        console.log("LOG: Image could not be found");
+    }
 }
 
 //The function that serves as an endless loop, allowing for animations and dynamic changes in the render
 function update(renderer, scene, camera, control)
 {
     onWindowResize(camera, renderer);
+
+    renderer.setClearColor( 0x000000, 0 );
 
     //Make the renderer render the scene and the camera
     renderer.render
