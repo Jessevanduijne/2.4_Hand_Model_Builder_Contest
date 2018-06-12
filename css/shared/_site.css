@@ -17,6 +17,20 @@ body
     animation: Gradient 40s ease infinite;
 }
 
+.white-bar
+{
+
+}
+
+.donate-button
+{
+    transform: scale(2);
+}
+
+.wedstrijd-btn
+{
+    padding-left: 20em;
+}
 
 /*The GUI panel*/
 #gui-container

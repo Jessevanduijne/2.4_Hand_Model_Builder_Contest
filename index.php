@@ -25,9 +25,7 @@
 
 <div class="overlay-effect">
     <ul class="slideshow">
-        <li>
-            <h3>Pure CSS Fullscreen Fading Slideshow</h3>
-            <span>Slide One</span> </li>
+        <li> <span>Slide One</span> </li>
         <li> <span>Slide Two</span> </li>
         <li> <span>Slide Three</span> </li>
         <li> <span>Slide Four</span> </li>
@@ -38,8 +36,10 @@
     <section class="navigation">
         <header>
             <div class="header-content">
-                <div><a  href="https://www.childsurgery-vietnam.org/"><img class="csvlogo" src="../img/csvlogo2.png" alt="Logo Child Surgery Vietnam"></a></div>
+                <div>
+                    <a  href="https://www.childsurgery-vietnam.org/"><img class="csvlogo" src="../img/csvlogo-white.png" alt="Logo Child Surgery Vietnam"></a>
                 </div>
+<!--                <div><a href="https://www.childsurgery-vietnam.org/contact" class="csvcontact">Contact</a></div>-->
             </div>
         </header>
     </section>
@@ -49,7 +49,11 @@
                 <div class="hero-content text-center">
                     <h1>Personaliseer, deel, win!</h1>
                     <p class="intro"><b>Personaliseer nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
-                    <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right">Begin met personaliseren</a> <a href="#" class="btn btn-accent btn-large">Doneer</a>
+                    <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right">personaliseer nu</a>
+                    <a target="_blank" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large donate-button">Doneer</a>
+                    <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
+
+
                 </div>
             </div>
         </div>
@@ -58,6 +62,11 @@
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <i class="fa fa-angle-down"></i></div>
 </section>
+
+<section class="white-bar">
+
+</section>
+
 <section class="intro section-padding">
     <div class="container">
         <div class="row">
@@ -71,7 +80,7 @@
 
                         In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies waar elke euro terecht komt. <br /><br />
                     </p>
-                    <a href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-fill btn-large btn-margin-right">Doneer nu!</a>
+                    <a href="https://www.childsurgery-vietnam.org/doneren" target="_blank" class="btn btn-fill btn-large btn-margin-right">Doneer nu!</a>
                 </div>
             </div>
             <div class="col-md-4 intro-feature">
@@ -92,11 +101,21 @@
             </div>
             <div class="col-md-4 intro-feature">
                 <div class="intro-icon">
-                    <span data-icon="&#xe046;" class="icon"></span>
+                    <img src="../img/crowd-source.png" class="text-icon">
                 </div>
                 <div class="intro-content last">
-                    <h5>Titel</h5>
-                    <p>Hier moet nog iets van tekst komen.</p>
+                    <h5>Wat kun jij doen?</h5>
+                    <p>Om deze campagne te steunen kun je op meerdere manieren helpen. Een daarvan is het personaliseren van
+                        een 3D hand in de <a href="/Project2.4/views/model_view.php"> 3D omgeving</a>.
+                        Deze hand kun je delen
+                        op social media en als je mee doet aan de <a href="#"> 100 Handen wedstrijd</a> ben jij misschien wel de winnar!
+                        <br/><br/>
+
+                        Als je Child Surgery Vietnam en deze campagne direct wilt steunen kun je ook een
+                        <a href="https://www.childsurgery-vietnam.org/doneren" target="_blank">donatie doen</a>.
+
+                    </p>
+
                 </div>
             </div>
         </div>
