@@ -44,7 +44,7 @@
         <div id="Kleur" class="tabcontent">
           <h2>Kleur</h2>
 
-          <form>
+        <form>
             Achtergrondkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()">
             Tekenkleur : <input type="color" name="draw_color" onchange="startDrawing()">
             <button type="button" onclick="stopDrawing()">Stop</button>
@@ -60,6 +60,7 @@
           <form>
             <input type="file" accept="image/*" id="UserImage" accept="image/*" onchange="">
             <button type="reset" value="Reset">Reset</button>
+          </form>
         </div>
 
         <div id="Share" class="tabcontent">

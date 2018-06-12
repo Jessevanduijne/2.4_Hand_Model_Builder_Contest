@@ -57,20 +57,6 @@ function init()
 
     //Update the renderer, scene and camera
     update(renderer, scene, camera, orbitControl);
-
-    if(savedImage != null)
-    {
-        var img = document.createElement('img');
-        img.src = savedImage;
-
-        var target = document.getElementById("image-container");
-        target.appendChild(img);
-    }
-    else
-    {
-        var img = document.getElementById("image-container");
-        console.log("LOG: Image could not be found");
-    }
 }
 
 //The function that serves as an endless loop, allowing for animations and dynamic changes in the render
