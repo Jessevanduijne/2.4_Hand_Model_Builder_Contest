@@ -2,21 +2,27 @@
 //All functionality within this class is dedicated to manipulating the 1
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, color='gray') {
+function loadModel(scene, path, modelColor, scale) {
     //Create a new STLLoader
     var loader = new THREE.OBJLoader();
-
     //Load the STL-file using the path
     loader.load(path, function (geometry) {
         //Create a new material
         var material = new THREE.MeshPhongMaterial
         ({
-            color: color
+            color: modelColor
+        });
+        // kayleigh
+        geometry.traverse(function(child){
+          if (child instanceof THREE.Mesh) {
+            child.material=material;
+          }
         });
 
         //Add the mesh to the scene
         scene.add(geometry);
 
+        console.log('LOG:', material);
         //Rotate the custom model
         //rotateObject(geometry, -90, 0, 0);
 
@@ -39,7 +45,7 @@ function loadModel(scene, path, color='gray') {
     });
 }
 
-function updateModel(scene){
+function updateModel(scene, modelColor){
     removeObject("loadedModel");
-    loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR);
+    loadModel(scene, HARDCODED_3DMODEL_PATH, modelColor, 0.014);
 }

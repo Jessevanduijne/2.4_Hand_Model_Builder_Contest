@@ -41,7 +41,25 @@
         </div>
 
         <div id="Kleur" class="tabcontent">
+          <h2>Kleur</h2>
 
+        <form>
+            Achtergrondkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()">
+            Tekenkleur : <input type="color" name="draw_color" onchange="startDrawing()">
+            <button type="button" onclick="stopDrawing()">Stop</button>
+          </form>
+          <h2>Tekst</h2>
+          <form>
+            <input type="text">
+            <input type="submit">
+            <input type="reset">
+          </form>
+
+          <h2>Afbeelding</h2>
+          <form>
+            <input type="file" accept="image/*" id="UserImage" accept="image/*" onchange="">
+            <button type="reset" value="Reset">Reset</button>
+          </form>
         </div>
 
         <div id="Share" class="tabcontent">
@@ -54,7 +72,7 @@
                 <div class="form-group">
                     <div class="text-muted">Temporary: To provide a way of saving customised model images.<br /> Does not yet support saving models!</div><br />
                 <label for="image_name">Save the file to the server:</label> </br>
-                <input class="form-control" text" name="image_name" placeholder="Enter image name..." required minlength="3">
+                <input class="form-control" name="image_name" placeholder="Enter image name..." required minlength="3">
                 <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>
                 <button class="btn btn-outline-default mg-3" type="submit" name="submit" onclick="save()" id="submit-button">Save</button>
                 </div>
@@ -82,10 +100,17 @@
     document.getElementById("default").click();
 
     /* Set the width of the side navigation to 250px */
-    function changeModel(model) {
-        HARDCODED_3DMODEL_PATH = model;
-        console.log(HARDCODED_3DMODEL_PATH);
-        updateModel(scene);
+    function changeModel(model){
+      HARDCODED_3DMODEL_PATH = model;
+      console.log(HARDCODED_3DMODEL_PATH);
+      updateModel(scene, DEFAULT_MODEL_COLOR);
+    }
+
+    /* kayleigh */
+    function changeBGColor(){
+      modelColor = document.getElementById("changedColor").value;
+      console.log();
+      updateModel(scene, modelColor);
     }
 
     function openNav() {
