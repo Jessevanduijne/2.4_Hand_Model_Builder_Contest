@@ -76,7 +76,6 @@
                     <input class="form-control" name="image_name" placeholder="Enter image name..." required minlength="3">
 
                     <input type="hidden"    name="render_snapshot"  id="hidden_image"       value=""/>
-<!--                    <input type="text"      name="render_model"     id="hidden_model_input" value="" class="hidden"/>-->
                     <textarea               name="render_model"     id="hidden_model_input" value="" class="hidden"></textarea>
 
                     <button class="btn btn-outline-default mg-3" type="submit" name="submit" onclick="save_screenshot()" id="submit-button">Save</button>
