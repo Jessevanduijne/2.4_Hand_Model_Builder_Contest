@@ -1,11 +1,11 @@
 <?php session_start();?>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato"/>
 
+
 <!DOCTYPE html>
 
 <html>
 <head>
-
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/shared/_site.css">
@@ -13,12 +13,11 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <link rel="stylesheet" type="text/css" href="../css/shareIntegratie/style.css">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/facebook.js"></script>
+
 
     <title>Bouw je eigen hand voor CSVN</title>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="../scripts/facebook.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Facebook meta data: -->
     <meta property="fb:app_id"             content="400725930337109"/>
@@ -27,6 +26,11 @@
     <meta property="og:image"              content="">
 
     <script>
+
+
+        var imagenaam = null;
+
+
       // Initialiseer Facebook Javascript-SDK, wordt geladen zodra SDK is ingeladen.
       window.fbAsyncInit = function() {
         FB.init({
@@ -74,7 +78,11 @@
 
               $.post("../scripts/file-handling/upload.php", {imagename:hName, imagefile:imageFile}, function(result){ // parameters: url, query, callback
                   alert("Je image " + hName + " is succesvol ge-upload! \nImage-file: ");
+                  var result = JSON.parse(result);
+                  console.log("result.filename: " + result.filename);
+                  imagenaam = result.filename;
               });
+
             });
         });
       });
@@ -82,6 +90,7 @@
 </head>
 
 <body>
+
 <div id="scene"></div>
     <div id="gui-container"></div>
 
@@ -151,7 +160,7 @@
                   <input type="text" name="handName" id="handName"
                            placeholder="Voer hier een naam in"
                            value="<?php if (isset($_POST['handName'])) echo $_POST['handName']; ?>">
-                    <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>-->
+                    <input type="hidden" name="render_snapshot" id="hidden_image" value="">/>
 
                   <h2> Doe mee aan de wedstrijd: </h2>
                   <button type="submit" id="wedstrijdButton" onclick="vulNaamIn(); return false;">
@@ -161,7 +170,7 @@
                 </form><br>
 
               <h2> Share je hand: </h2>
-                <input type="image" id="facebookBtn" onclick="submitAndShare() save();" class="clickIcon" src="../img/fb.png"/>
+                <input type="image" id="facebookBtn" onclick="submitAndShare();" class="clickIcon" src="../img/fb.png"/>
                 <input type="image" id="tweetBtn" class="clickIcon" src="../img/twitter.png"/>
             </section>
 
@@ -222,7 +231,6 @@
     /* kayleigh */
     function changeBGColor(){
       modelColor = document.getElementById("changedColor").value;
-      console.log();
       updateModel(scene, modelColor);
     }
 
@@ -239,6 +247,7 @@
 </body>
 
 <footer>
+
     <!-- 3RD Party Libraries -->
     <script type="text/javascript" src="../scripts/lib/three.js"></script>
     <script type="text/javascript" src="../scripts/lib/OBJLoader.js"></script>
@@ -248,19 +257,21 @@
     <script type="text/javascript" src="../scripts/lib/guid.generator.js"></script>
 
 
-
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
 
     <!-- Global Variables -->
     <script type="text/javascript" src="../scripts/global.js.variables.js"></script>
 
     <!-- ... -->
+    <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
     <script type="text/javascript" src="../scripts/controllers/renderer.controller.js"></script>
     <script type="text/javascript" src="../scripts/controllers/object.controller.js"></script>
     <script type="text/javascript" src="../scripts/controllers/model.controller.js"></script>
     <script type="text/javascript" src="../scripts/controllers/camera.controller.js"></script>
     <script type="text/javascript" src="../css/shared/_site.js"></script>
 
-    <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
+
+
+
 </footer>
 </html>

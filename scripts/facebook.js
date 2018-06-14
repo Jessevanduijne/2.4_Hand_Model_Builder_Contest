@@ -1,4 +1,4 @@
-  // Onderstaande methode wordt aangeroepen als er op de login-knop gedrukt wordt.
+// Onderstaande methode wordt aangeroepen als er op de login-knop gedrukt wordt.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
@@ -46,10 +46,13 @@ function submitAndShare()
     return false; // Als er een error in de code zit, wordt het 'default' uitgevoerd.
   }
 
-  else {
+  else
+      {
     FB.api('/me', function(response) {
       var fbname = response.name;
-      var afbeelding = 'https://media.giphy.com/media/l4KhNMgN64czlGhWg/giphy.gif'; // LEt op: image moet minimaal 200x200pix zijn
+        console.log("Facebook.js" + imagenaam);
+        alert(imagenaam);
+      var afbeelding = "http://localhost/Project2.4/content/user_screenshots/" + imagenaam; // Let op: image moet minimaal 200x200pix zijn
       var titel = 'Check de hand ' + handname + ' van ' + fbname;
       var beschrijving = 'Deze prothetische hand is ontworpen voor CSVN. Doneer snel en ontwerp ook een hand!';
 
