@@ -27,9 +27,11 @@ function createRenderer(elementId, w, h, color)
 //Save the screenshot
 function save()
 {
+
     //Set the value of the hidden image to a snapshot of the renderer
     $("#hidden_image").val(renderer.domElement.toDataURL('image/png'));
-    $("#image-form").submit();
+    alert($("#hidden_image").val());
+    //$("#image-form").submit();
 
-    alert("De submit button werkt");
+
 }

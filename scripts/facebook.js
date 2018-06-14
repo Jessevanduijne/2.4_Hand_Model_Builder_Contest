@@ -32,6 +32,9 @@ function vulNaamIn(){
     alert("Voer alsjeblieft een handnaam in voordat je deelneemt aan de wedstrijd!");
     return false; // Als er een error in de code zit, wordt het 'default' uitgevoerd.
   }
+
+  //Functie Teije om hand op te slaan
+  save();
 }
 
 function submitAndShare()

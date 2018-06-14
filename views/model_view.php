@@ -49,31 +49,33 @@
 
       // Normaalgesproken laad een form een andere pagina (action) in. Om te zorgen dat
       // .. de pagina niet herladen óf een pagina inlaadt, deze methode:
-      $(function(){
-        $(wedstrijdButton).click(function(){
-          FB.api('/me', function(response) {
-          var hName = $("#handName").val();
-          var fbName = response.name;
+      $(function()
+      {
+          //Zodra je op de 'meedoen met wedstrijd' klikt: data opslaan naar database & image opslaan op server
+        $(wedstrijdButton).click(function()
+        {
+          FB.api('/me', function(response)
+          {
+              var hName = $("#handName").val();
+              var fbName = response.name;
 
-          $.post("../scripts/insertHandToDB.php", {handName:hName, uploaderName:fbName}, function(result){ // parameters: url, query, callback
-            var wedstrijdSection = document.getElementById('wedstrijdSection');
-            wedstrijdSection.style.display = "none";
+              //Jesse: Data posten naar DB
+              $.post("../scripts/insertHandToDB.php", {handName:hName, uploaderName:fbName}, function(result){ // parameters: url, query, callback
+                var wedstrijdSection = document.getElementById('wedstrijdSection');
+                wedstrijdSection.style.display = "none";
 
-            // Bericht van goedkeuring deelname:
-            document.getElementById('handSubmitted').innerHTML =  "Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!";
-          });
-        });
-        });
-      });
+                // Bericht van goedkeuring deelname:
+                document.getElementById('handSubmitted').innerHTML =  "Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!";
+              });
 
-      $(function(){
-        $(submitImage).click(function(){
-          var imageName = $("#imageName").val();
-          var imageFile = $("#hidden_image").val();
 
-          $.post("../scripts/file-handling/upload.php", {imageName1:imageName, imageFile1:imageFile}, function(result){ // parameters: url, query, callback
-            alert("Je image " + imageName + " is succesvol ge-upload! \nImage-file: ");
-          });
+              //Teije: Image opslaan op server
+              var imageFile = $("#hidden_image").val();
+
+              $.post("../scripts/file-handling/upload.php", {imagename:hName, imagefile:imageFile}, function(result){ // parameters: url, query, callback
+                  alert("Je image " + hName + " is succesvol ge-upload! \nImage-file: ");
+              });
+            });
         });
       });
     </script>
@@ -149,6 +151,7 @@
                   <input type="text" name="handName" id="handName"
                            placeholder="Voer hier een naam in"
                            value="<?php if (isset($_POST['handName'])) echo $_POST['handName']; ?>">
+                    <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>-->
 
                   <h2> Doe mee aan de wedstrijd: </h2>
                   <button type="submit" id="wedstrijdButton" onclick="vulNaamIn(); return false;">
@@ -158,7 +161,7 @@
                 </form><br>
 
               <h2> Share je hand: </h2>
-                <input type="image" id="facebookBtn" onclick="submitAndShare();" class="clickIcon" src="../img/fb.png"/>
+                <input type="image" id="facebookBtn" onclick="submitAndShare() save();" class="clickIcon" src="../img/fb.png"/>
                 <input type="image" id="tweetBtn" class="clickIcon" src="../img/twitter.png"/>
             </section>
 
@@ -178,15 +181,15 @@
             - Method: What kind of action is the form going to perform
             - Enctype: Specifies how the form-data should be encoded when submitting it to the server
             -->
-            <form action="/Project2.4/scripts/file-handling/upload.php" method="POST" enctype="multipart/form-data" id="image-form">
-                <div class="form-group">
-                    <div class="text-muted">Temporary: To provide a way of saving customised model images.<br /> Does not yet support saving models!</div><br />
-                <label for="image_name">Save the file to the server:</label> </br>
-                <input class="form-control" id="imageName" name="image_name" placeholder="Enter image name..." required minlength="3">
-                <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>
-                <button class="btn btn-outline-default mg-3" type="submit" id="submitImage" onclick="save(); return false;">Save</button>
-                </div>
-            </form>
+<!--            <form action="/Project2.4/scripts/file-handling/upload.php" method="POST" enctype="multipart/form-data" id="image-form">-->
+<!--                <div class="form-group">-->
+<!--                    <div class="text-muted">Temporary: To provide a way of saving customised model images.<br /> Does not yet support saving models!</div><br />-->
+<!--                <label for="image_name">Save the file to the server:</label> </br>-->
+<!--                <input class="form-control" id="imageName" name="image_name" placeholder="Enter image name..." required minlength="3">-->
+<!--
+<!--                <button class="btn btn-outline-default mg-3" type="submit" id="submitImage" onclick="save(); return false;">Save</button>-->
+<!--                </div>-->
+<!--            </form>-->
         </div>
     </div>
 </div>
