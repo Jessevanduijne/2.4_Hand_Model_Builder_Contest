@@ -130,7 +130,6 @@
                     <ul class="footer-group">
                         <li><a href="https://www.childsurgery-vietnam.org/">Child Surgery Vietnam</a></li>
                         <li><a href="https://inholland.nl/" id="inholland">Inholland</a></li>
-                        <li><a href="http://www.dribbble.com/">Dribbble</a></li>
                     </ul>
                         <a href="http://tympanus.net/codrops/licensing/">Licence</a>
                 </div>
