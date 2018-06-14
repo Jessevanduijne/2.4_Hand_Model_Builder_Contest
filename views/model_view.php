@@ -64,7 +64,7 @@
                 var wedstrijdSection = document.getElementById('wedstrijdSection');
                 wedstrijdSection.style.display = "none";
 
-                // Bericht van goedkeuring deelname:
+                // Bericht van goedkeuring deelname :
                 document.getElementById('handSubmitted').innerHTML =  "Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!";
               });
 
