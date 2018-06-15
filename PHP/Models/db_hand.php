@@ -80,7 +80,9 @@ class dbHand {
     }
 
     public function addScore($id){
+        $query = "UPDATE hands SET score = score + 1 WHERE id = ".$id;
 
+        $this->MySQL->query($query);
 
         $this->MySQL->close();
     }

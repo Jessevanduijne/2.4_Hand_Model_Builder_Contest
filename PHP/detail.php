@@ -15,27 +15,17 @@
 
     $handId = $_GET['id'];
 
-
-/*    //Check of de post een int is
-    if(is_int($handId)){
-        //haal de hand op dmv de handId die mee wordt gepost.
-        $hand = $db->getById($handId);
-
-        if(empty((array) $hand)){
-            //Mocht er een fout zijn, zoals dat de hand niet gevonden kan worden wordt de gebruiker teruggestuurd naar de leaderbord.
-            echo "<script> location.href='./leaderbord.php'; </script>";
-            exit;
-        }
-    }
-    else{
-        //geen int? Terugsturen naar de leaderbord.
+    //haal de hand op dmv de handId die mee wordt gepost.
+    $hand = $db->getById($handId);
+    //Check of een 'hand' wordt teruggegeven
+    if(!is_a($hand, "hand")){
+        //geen hand? Terugsturen naar de leaderbord.
         echo "<script> location.href='./leaderbord.php'; </script>";
         exit;
     }
-    */
 
     //Voor testen zonder escapes
-    $hand = $db->getById($handId);
+    //$hand = $db->getById($handId);
 
     ?>
 
@@ -48,16 +38,28 @@
 
 
 <body id="margin-nul-fix">
-    <section id="scene">
-    </section>
 
+<!-- Hierop wordt de hand gerenderd:-->
+    <section id="scene"></section>
 
+<!--sidepanel-->
     <div id="mySidenav" class="sidenav scrollbar-primary">
         <section class="hand-informatie">
-            <span id="hand-handnaam"><?php echo $hand->getHandname()?></span><br/>
-            <span id="hand-naam"><?php echo $hand->getNaam() ?></span><br/>
-            <span id="hand-generik">Aantal keer op gestemd: <?php echo $hand->getScore() ?></span><br/>
-            <span id="url"><?php echo $_SERVER['REQUEST_URI']; ?></span>
+            <span class="hand-handnaam"><?php echo $hand->getHandname();?></span><br/>
+            <span class="hand-naam">Gemaakt door: <?php echo $hand->getNaam(); ?></span><br/>
+            <span class="hand-generik">Aantal keer op gestemd: <span id="score"> <?php echo $hand->getScore(); ?></span> </span><br/>
+        </section><br/>
+
+        <form>
+            <a id="stemKnop" class="btn btn-large btn-green" onclick="voteHand()">Stem op deze hand!</a>
+        </form>
+
+        <section class="CSVN-beschrijving hand-informatie">
+            <br/><span id="CSVN-titel">CHILD SURGERY VIETNAM </span/><br/>
+            De Nederlandse stichting 'Child Surgery Vietnam' helpt lichamelijk gehandicapte kinderen in Vietnam. Veel kinderen gaan onnodig gehandicapt door het leven. De achterstand in orthopedische en plastische operaties kan binnen 10 jaar worden weggewerkt. Met úw hulp lukt dat!
+
+            Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies waar elke euro terecht komt.
+
         </section>
     </div>
 
@@ -66,11 +68,31 @@
             document.getElementById("mySidenav").style.width = "500px";
         }
         openNav();
+
+        function voteHand(){
+        var handId =  <?php echo $handId ?>;
+
+        var data = {
+            'id': handId
+        }
+        console.log(data.id);
+        console.log(handId);
+        $.ajax({
+            type: 'post',
+            url:'addvote.php',
+            data: data
+        }
+        )};
+
+        var score = parseInt(document.getElementById("score").innerHTML) + 1 ;
+        ;
+
     </script>
 </body>
 
 
 <footer>
+
     <!-- 3RD Party Libraries -->
     <script type="text/javascript" src="../scripts/lib/three.js"></script>
     <script type="text/javascript" src="../scripts/lib/OBJLoader.js"></script>
