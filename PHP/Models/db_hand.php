@@ -31,7 +31,7 @@ class dbHand {
 
                 echo $row->naam;
 
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -52,7 +52,7 @@ class dbHand {
 
         if($result) {
             while ($row = $result->fetch_object()) {
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -68,7 +68,7 @@ class dbHand {
 
         if($result){
             while($row = $result->fetch_object()){
-                $hand = new hand($row->id, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
             }
             $this->MySQL->close();
             return $hand;
