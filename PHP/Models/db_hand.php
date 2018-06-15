@@ -62,7 +62,7 @@ class dbHand {
 
     public function getById($id){
         require_once ('hand.php');
-        $query = "SELECT * FROM 'hands' WHERE id = ".mysqli_escape_string($id);
+        $query = "SELECT * FROM hands WHERE id = ".$this->MySQL->real_escape_string($id);
         $hand = null;
         $result = $this->MySQL->query($query);
 
