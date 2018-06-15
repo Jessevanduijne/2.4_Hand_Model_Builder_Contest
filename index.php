@@ -37,7 +37,7 @@
         <header>
             <div class="header-content">
                 <div>
-                    <a  href="https://www.childsurgery-vietnam.org/"><img class="csvlogo" src="../img/csvlogo-white.png" alt="Logo Child Surgery Vietnam"></a>
+                    <a  href="https://www.childsurgery-vietnam.org/"><img class="csvlogo" src="./img/csvlogo.png" alt="Logo Child Surgery Vietnam"></a>
                 </div>
 <!--                <div><a href="https://www.childsurgery-vietnam.org/contact" class="csvcontact">Contact</a></div>-->
             </div>
@@ -49,10 +49,11 @@
                 <div class="hero-content text-center">
                     <h1>Personaliseer, deel, win!</h1>
                     <p class="intro"><b>Personaliseer nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
-                    <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right">personaliseer nu</a>
-                    <a target="_blank" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large donate-button">Doneer</a>
-                    <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
-
+                    <div id="button-wrapper">
+                        <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right ">personaliseer nu</a>
+                        <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large">Doneer</a>
+                        <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
+                    </div>
 
                 </div>
             </div>
@@ -72,7 +73,7 @@
         <div class="row">
             <div class="col-md-4 intro-feature">
                 <div class="intro-icon">
-                    <img src="../img/charity2.png" class="text-icon">
+                    <img src="./img/charity2.png" class="text-icon">
                 </div>
                 <div class="intro-content">
                     <h5>Child Surgery Vietnam</h5>
@@ -85,7 +86,7 @@
             </div>
             <div class="col-md-4 intro-feature">
                 <div class="intro-icon">
-                    <img src="../img/idea.png" class="text-icon">
+                    <img src="./img/crowdsource.png" class="text-icon">
                 </div>
                 <div class="intro-content">
                     <h5>Deze Campagne</h5>
@@ -101,7 +102,7 @@
             </div>
             <div class="col-md-4 intro-feature">
                 <div class="intro-icon">
-                    <img src="../img/crowd-source.png" class="text-icon">
+                    <img src="./img/socialmedia.png" class="text-icon">
                 </div>
                 <div class="intro-content last">
                     <h5>Wat kun jij doen?</h5>
@@ -130,7 +131,6 @@
                     <ul class="footer-group">
                         <li><a href="https://www.childsurgery-vietnam.org/">Child Surgery Vietnam</a></li>
                         <li><a href="https://inholland.nl/" id="inholland">Inholland</a></li>
-                        <li><a href="http://www.dribbble.com/">Dribbble</a></li>
                     </ul>
                         <a href="http://tympanus.net/codrops/licensing/">Licence</a>
                 </div>

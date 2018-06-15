@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<div id="scene"></div>
+    <div id="scene"></div>
     <div id="gui-container"></div>
 
     <span onclick="openNav()" id="nav-icon" class="glyphicon glyphicon-align-justify"></span>
@@ -71,10 +71,14 @@
             <form action="/Project2.4/scripts/file-handling/upload.php" method="POST" enctype="multipart/form-data" id="image-form">
                 <div class="form-group">
                     <div class="text-muted">Temporary: To provide a way of saving customised model images.<br /> Does not yet support saving models!</div><br />
-                <label for="image_name">Save the file to the server:</label> </br>
-                <input class="form-control" name="image_name" placeholder="Enter image name..." required minlength="3">
-                <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>
-                <button class="btn btn-outline-default mg-3" type="submit" name="submit" onclick="save()" id="submit-button">Save</button>
+
+                    <label for="image_name">Save the file to the server:</label> </br>
+                    <input class="form-control" name="image_name" placeholder="Enter image name..." required minlength="3">
+
+                    <input type="hidden"    name="render_snapshot"  id="hidden_image"       value=""/>
+                    <textarea               name="render_model"     id="hidden_model_input" value="" class="hidden"></textarea>
+
+                    <button class="btn btn-outline-default mg-3" type="submit" name="submit" onclick="save_screenshot()" id="submit-button">Save</button>
                 </div>
             </form>
         </div>
@@ -129,12 +133,12 @@
     <!-- 3RD Party Libraries -->
     <script type="text/javascript" src="../scripts/lib/three.js"></script>
     <script type="text/javascript" src="../scripts/lib/OBJLoader.js"></script>
+    <script type="text/javascript" src="../scripts/lib/OBJExporter.js"></script>
+
     <script type="text/javascript" src="../scripts/lib/dat.gui.min.js"></script>
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
     <script type="text/javascript" src="../scripts/lib/jQuery.js"></script>
     <script type="text/javascript" src="../scripts/lib/guid.generator.js"></script>
-
-
 
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
 

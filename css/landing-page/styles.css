@@ -71,14 +71,14 @@
 }
 
 .slideshow li:nth-child(3) span {
-  background-image: url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b73302ddf5fabf9285df2da9c462efbb&auto=format&fit=crop&w=1950&q=80);
+  background-image: url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b73302ddf5fabf9285df2da9c462efbb&auto=format&fit=crop&w=1350&q=80);
   -webkit-animation-delay: 12s;
   -moz-animation-delay: 12s;
   animation-delay: 12s;
 }
 
 .slideshow li:nth-child(4) span {
-  background-image: url(http://www.molnlycke.se/PageFiles/71576/Operation-Smile-boy.jpg);
+  background-image: url(https://www.operationsmile.org/sites/default/files/images/CHN_2009_2011_Guo_After_026.tif_NetPublish_Converted.jpg);
   -webkit-animation-delay: 18s;
   -moz-animation-delay: 18s;
   animation-delay: 18s;
@@ -232,6 +232,17 @@ h5 {
   color: #3D4351;
   text-transform: uppercase;
   font-weight: 500; }
+
+#donate-button
+{
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+#button-wrapper
+{
+  left: 60%;
+}
 
 .btn {
   font-size: 13px;
@@ -656,7 +667,7 @@ header {
   font-size: 30px;
   position: absolute;
   bottom: 5px;
-  left: 50.5%;
+  left: 49.3%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }

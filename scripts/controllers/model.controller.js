@@ -23,8 +23,6 @@ function loadModel(scene, path, modelColor, scale) {
         scene.add(geometry);
 
         console.log('LOG:', material);
-        //Rotate the custom model
-        //rotateObject(geometry, -90, 0, 0);
 
         //Scale the custom model
         geometry.scale.set(0.02, 0.02, 0.02);
