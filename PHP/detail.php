@@ -38,6 +38,12 @@
     $hand = $db->getById($handId);
 
     ?>
+
+    <!--Facebook-->
+    <meta property="og:url"                content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+    <meta property="og:title"              content="100 Handen voor Vietnam" />
+    <meta property="og:description"        content="<?php $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"  />
+    <meta property="og:image"              content="<?php $hand->getImageRef() ?>" />
 </head>
 
 
@@ -48,16 +54,17 @@
 
     <div id="mySidenav" class="sidenav scrollbar-primary">
         <section class="hand-informatie">
-            <?php echo $hand->getNaam() ?>
+            <span id="hand-handnaam"><?php echo $hand->getHandname()?></span><br/>
+            <span id="hand-naam"><?php echo $hand->getNaam() ?></span><br/>
+            <span id="hand-generik">Aantal keer op gestemd: <?php echo $hand->getScore() ?></span><br/>
+            <span id="url"><?php echo $_SERVER['REQUEST_URI']; ?></span>
         </section>
-
     </div>
 
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "500px";
         }
-
         openNav();
     </script>
 </body>
