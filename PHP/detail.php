@@ -72,6 +72,12 @@
         function voteHand(){
         var handId =  <?php echo $handId ?>;
 
+
+        var score = document.getElementById("score").innerHTML;
+        var newScore = parseInt(score) + 1;
+
+        document.getElementById("score").innerText = newScore;
+
         var data = {
             'id': handId
         }
@@ -83,8 +89,6 @@
             data: data
         }
         )};
-
-        var score = parseInt(document.getElementById("score").innerHTML) + 1 ;
         ;
 
     </script>
