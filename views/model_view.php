@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
+
 </head>
 
 <body>
@@ -106,7 +107,6 @@
     /* Set the width of the side navigation to 250px */
     function changeModel(model){
       HARDCODED_3DMODEL_PATH = model;
-      console.log(HARDCODED_3DMODEL_PATH);
       updateModel(scene, DEFAULT_MODEL_COLOR);
     }
 
