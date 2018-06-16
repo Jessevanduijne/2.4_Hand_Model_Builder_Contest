@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/wedstrijd/main.css">
 
     <?php
-    require_once("./models/getvisitor.php");
-    include_once("./models/db_hand.php");
+    require_once("./scripts/getvisitor.php");
+    require_once("./db/db_hand.php");
     $db = new dbHand();
 
     $handId = $_GET['id'];
