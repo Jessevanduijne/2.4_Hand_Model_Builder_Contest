@@ -107,7 +107,6 @@
     /* Set the width of the side navigation to 250px */
     function changeModel(model){
       HARDCODED_3DMODEL_PATH = model;
-      console.log(HARDCODED_3DMODEL_PATH);
       updateModel(scene, DEFAULT_MODEL_COLOR);
     }
 

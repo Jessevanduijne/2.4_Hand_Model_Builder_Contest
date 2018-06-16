@@ -1,3 +1,8 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    background-color: rgba(159, 166, 23, 0.51) !important;
+}
+
 .hand-informatie{
     margin: 50px 0 0 50px;
     display: block;
@@ -139,3 +144,62 @@ a.btn,.btn {
 }
 
 
+.card, .card-small{
+    background: #fff;
+    width: calc(100% / 3 - 6px);
+    display: inline-table;
+    overflow: hidden;
+    margin: 3px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px #999;
+}
+
+
+
+.card-small{
+    width: 100%;
+    height: 50px;
+}
+
+.card-image img{
+    width: 100%;
+    height: auto;
+}
+
+rowcards{
+    width: 100%;
+
+}
+
+.card-title{
+    font-size: 2em;
+}
+
+h2{
+    border: 0px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+h1{
+    border: 0px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-vote {
+    background: #A3AA22;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.btn-vote:hover {
+    background: #D2D591;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+}
