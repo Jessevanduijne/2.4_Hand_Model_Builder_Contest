@@ -36,4 +36,8 @@ class visitor_db
 
         $this->MySQL->query($query);
     }
+
+    public function getIdFromUid($uid){
+
+    }
 }
