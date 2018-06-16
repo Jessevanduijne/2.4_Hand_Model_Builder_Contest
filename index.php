@@ -49,10 +49,11 @@
                 <div class="hero-content text-center">
                     <h1>Personaliseer, deel, win!</h1>
                     <p class="intro"><b>Personaliseer nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
-                    <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right">personaliseer nu</a>
-                    <a target="_blank" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large donate-button">Doneer</a>
-                    <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
-
+                    <div id="button-wrapper">
+                        <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right ">personaliseer nu</a>
+                        <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large">Doneer</a>
+                        <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
+                    </div>
 
                 </div>
             </div>

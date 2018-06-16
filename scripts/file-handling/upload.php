@@ -1,5 +1,5 @@
-<?php
-$MAX_FILE_SIZE = 1000000;
+<?php session_start();
+$MAX_FILE_SIZE = 10000000000;
 
 if(isset($_POST['imagename']) && isset($_POST['imagefile']))
 {
@@ -17,7 +17,6 @@ if(isset($_POST['imagename']) && isset($_POST['imagefile']))
     //Put the image from $_POST in the specified folder
     $fileImage = $_POST['imagefile'];
     file_put_contents($fileDestination, file_get_contents($fileImage));
-
 
     //Set session image- name & path - used to pass along the values after the upload
     $_SESSION['imagename'] = $filename;

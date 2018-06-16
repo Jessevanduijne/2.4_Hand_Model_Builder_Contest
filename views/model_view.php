@@ -79,7 +79,6 @@
   </head>
 
 <body>
-
   <div id="scene"></div>
     <div id="gui-container"></div>
       <span onclick="openNav()" id="nav-icon" class="glyphicon glyphicon-align-justify"></span>
@@ -215,10 +214,11 @@
     <!-- 3RD Party Libraries -->
     <script type="text/javascript" src="../scripts/lib/three.js"></script>
     <script type="text/javascript" src="../scripts/lib/OBJLoader.js"></script>
+    <script type="text/javascript" src="../scripts/lib/OBJExporter.js"></script>
+
     <script type="text/javascript" src="../scripts/lib/dat.gui.min.js"></script>
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
     <script type="text/javascript" src="../scripts/lib/guid.generator.js"></script>
-
 
     <script type="text/javascript" src="../scripts/lib/orbit.controls.js"></script>
 

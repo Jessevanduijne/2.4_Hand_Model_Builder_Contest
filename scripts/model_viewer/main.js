@@ -6,7 +6,6 @@ function init()
 {
     //Create a new (more flexible) GUI panel
     var gui;
-    //= new dat.GUI({ autoPlace: false });
 
     //var customContainer = document.getElementById('gui-container');
     //customContainer.appendChild(gui.domElement);
@@ -64,6 +63,7 @@ function update(renderer, scene, camera, control)
 {
     onWindowResize(camera, renderer);
 
+    //Set the background of the renderer to be transparent
     renderer.setClearColor( 0x000000, 0 );
 
     //Make the renderer render the scene and the camera
