@@ -1,0 +1,219 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    background-color: rgba(159, 166, 23, 0.51) !important;
+}
+
+.hand-informatie{
+    margin: 50px 0 0 50px;
+    display: block;
+}
+
+#margin-nul-fix{
+    margin: 0;
+}
+
+.hand-handnaam{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.hand-naam{
+    font-size: large;
+}
+
+.hand-datum{
+
+}
+
+.hand-generik{
+    font-size: larger;
+}
+
+.CSVN-beschrijving{
+    margin: 50px 0 0 50px;
+    color: #9F9F9F;
+    position: absolute;
+    bottom: 50px;
+}
+#CSVN-titel{
+    color: #90a4ae;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+/*opgehaald van https://codepen.io/mithicher/pen/acyfq*/
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 4em auto;
+    font-family: Raleway, Arial, sans-serif;
+    padding: 1em 2em;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #eee;
+    margin: 2em 0;
+    padding: 0;
+}
+
+h1, h2 {
+    margin-bottom: 1em;
+    border-bottom: 2px solid #eee;
+    line-height: 1.5;
+}
+
+h1 > small{
+    color: #666;
+}
+
+h1 > small > a,
+p > a{
+    color: #3CB371;
+    text-decoration: none;
+}
+h1 > small > a:hover,
+p > a:hover{
+    text-decoration: underline;
+}
+
+/* Buttons styles */
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type="submit"].btn,
+button.btn {
+    cursor: pointer;
+}
+
+a.btn,.btn {
+    padding:8px;
+    display: inline-block;
+    outline: none;
+    *zoom: 1;
+    text-align: center;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    border: 1px solid;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+.btn-large {
+    font-size: 1.0625em;
+    padding: 0.5625em 1.5em;
+}
+.btn-green {
+    color: #3CB371;
+    border-color: #3CB371;
+}
+.btn-green:hover {
+    background: #3CB371;
+    color: #fff;
+    border-color: #3CB371;
+}
+
+.btn-red {
+    color: #B22222;
+    border-color: #B22222;
+}
+.btn-red:hover {
+    background: #B22222;
+    color: #fff;
+    border-color: #B22222;
+}
+
+
+.card, .card-small{
+    background: #fff;
+    width: calc(100% / 3 - 6px);
+    display: inline-table;
+    overflow: hidden;
+    margin: 3px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px #999;
+}
+
+
+
+.card-small{
+    width: 100%;
+    height: 50px;
+}
+
+.card-image img{
+    width: 100%;
+    height: auto;
+}
+
+rowcards{
+    width: 100%;
+
+}
+
+.card-title{
+    font-size: 2em;
+}
+
+h2{
+    border: 0px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+h1{
+    border: 0px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-vote {
+    background: #A3AA22;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.btn-vote:hover {
+    background: #D2D591;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.btn-medium {
+    font-size: 0.9375em;
+    padding: 0.5375em 1.375em;
+}
+
+.btn-blue {
+    color: #4682B4;
+    border-color: #4682B4;
+}
+.btn-blue:hover {
+    background: #4682B4;
+    color: #fff;
+    border-color: #4682B4;
+}
