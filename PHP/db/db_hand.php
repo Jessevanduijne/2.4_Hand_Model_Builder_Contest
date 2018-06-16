@@ -1,19 +1,15 @@
 <?php
-class dbHand {
+require_once "db.php";
+
+
+class dbHand extends db{
     private $hostname, $username, $password, $tablename;
     private $MySQL;
+    private $db;
 
     public function __construct(){
-        $this->MySQL = $this->init();
-    }
-
-    private function init(){
-        $str = file_get_contents("./Config/config.json", true); //Krijg gegevens van config.json file
-        $json = json_decode($str, true); // zet JSON om in een PHP-array
-        //Test de functie:
-        //echo '<pre>' . print_r($json, true) . '</pre>';
-
-        return new mysqli($json['Database']['hostname'], $json['Database']['username'], $json['Database']['password'], $json['Database']['table']);
+        $db = new db();
+        $this->MySQL = $db->returnMySQL();
     }
 
     public function getAllHands(){
