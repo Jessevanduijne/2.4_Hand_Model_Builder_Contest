@@ -1,27 +1,29 @@
 // Onderstaande methode wordt aangeroepen als er op de login-knop gedrukt wordt.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      facebookInlogStatus(response);
     });
   }
 
   // Onderstaande methode wordt aangeroepen met het resultaat van FB.getLoginstatus() uit de SDK.
-  function statusChangeCallback(response) {
+  function facebookInlogStatus(response) {
 
-    var handDetails = document.getElementById("handDetails");
+    // Haal sections op:
+    var voerHandnaamIn = document.getElementById("wedstrijdSection");
     var nogNietIngelogd = document.getElementById("nogNietIngelogd");
+    var handSubmittedMessage = document.getElementById("handSubmitted");
+    var shareKnoppen = document.getElementById("shareSection");
 
     if (response.status === 'connected') {
-      handDetails.style.display = "block";
-      nogNietIngelogd.style.display = "none";
+      voerHandnaamIn.style.display = "block"; // Handnaam kan je niet invoeren als je niet ingelogd bent
+      nogNietIngelogd.style.display = "none"; // Inlog-gedeelte verbergen wanneer ingelogd
     }
-    else if (response.status === 'not_authorized') { // Login gefaald..
-      handDetails.style.display = "none";
+    else { // Niet geautoriseerd of nog niet ingelogd
+      voerHandnaamIn.style.display = "none";
       nogNietIngelogd.style.display = "block";
-    }
-    else {
-      handDetails.style.display = "none";
-      nogNietIngelogd.style.display = "block";
+      handSubmittedMessage.style.display = "none";
+      shareKnoppen.style.display = "none";
+      // Je kan de hand niet delen óf meedoen met de competitie als je niet ingelogd bent
     }
   }
 
@@ -33,7 +35,7 @@ function vulNaamIn(){
     return false; // Als er een error in de code zit, wordt het 'default' uitgevoerd.
   }
 
-  //Functie Teije om hand op te slaan
+  // Bij true: hand wordt opgeslagen (Teije)
   save();
 }
 
@@ -46,15 +48,12 @@ function submitAndShare()
     return false; // Als er een error in de code zit, wordt het 'default' uitgevoerd.
   }
 
-  else
-      {
+  else {
     FB.api('/me', function(response) {
-      var fbname = response.name;
-        console.log("Facebook.js" + imagenaam);
-        alert(imagenaam);
+      var fbname = response.name;                                             // imagenaam is een globale variabele
       var afbeelding = "http://localhost/Project2.4/content/user_screenshots/" + imagenaam; // Let op: image moet minimaal 200x200pix zijn
       var titel = 'Check de hand ' + handname + ' van ' + fbname;
-      var beschrijving = 'Deze prothetische hand is ontworpen voor CSVN. Doneer snel en ontwerp ook een hand!';
+      var beschrijving = fbname + ' heeft deze hand ontworpen om het goede doel Child Surgery Vietnam onder de aandacht te brengen. Doneer snel en ontwerp ook een hand!';
 
       overrideMetaData(titel, beschrijving, afbeelding);
     });

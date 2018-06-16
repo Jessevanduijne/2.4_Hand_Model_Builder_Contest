@@ -11,16 +11,13 @@ if(isset($_POST['imagename']) && isset($_POST['imagefile']))
     //If file name is empty; set default 'no-name' value
     // $filename =  empty($filename) ? 'no-name' : $filename;
     //Image file save destination (made unique using a timestamp)
-    $fileDestination = 'C:\\xampp\\htdocs\\Project2.4/content/user_screenshots/'.$filename;
+    $fileDestination = '../../content/user_screenshots/'.$filename;
     //$fileDestination = 'C:\\Users\\Teije\\Dropbox\\Project 2.4/user_screenshots/'.$filename;
-    //getFtpConnection();
-
-    //$onlineFileDestination = 'http://sm2018a1.infhaarlem.nl/user_images/'.$filename;
 
     //Put the image from $_POST in the specified folder
     $fileImage = $_POST['imagefile'];
     file_put_contents($fileDestination, file_get_contents($fileImage));
-    //file_put_contents($onlineFileDestination, file_get_contents($fileImage));
+
 
     //Set session image- name & path - used to pass along the values after the upload
     $_SESSION['imagename'] = $filename;
@@ -32,23 +29,42 @@ if(isset($_POST['imagename']) && isset($_POST['imagefile']))
 
     $response = array
     (
-        'status' => true,
-        'message' => 'Success',
-        'filename' => $filename
+        "status" => true,
+        "message" => "Success",
+        "filename" => $filename
     );
 
     echo json_encode($response);
-}
 
-function getFtpConnection()
-{
-    // connect and login to FTP server
-    $ftp_server = "http://sm2018a1.infhaarlem.nl";
-    $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
-    $login = ftp_login($ftp_conn, sm2018a1, ARKI2wmwSM);
-}
-
-function closeFtpConnection($ftp_conn)
-{
-    ftp_close($ftp_conn);
+  //   // connect and login to FTP server
+  //   $ftp_server = "552779.infhaarlem.nl";
+  //   $onlineFileDestination = '../handimg/'.$filename;
+  //
+  //   try {
+  //     $ftp_conn = ftp_connect($ftp_server);
+  //     if (false === $ftp_conn) {
+  //         throw new Exception('Unable to connect');
+  //     }
+  //
+  //     $loggedIn = ftp_login($ftp_conn, "s552779", "AJQhEQ8b");
+  //     if (true === $loggedIn) {
+  //         // echo "Login was successful!";
+  //     } else {
+  //         throw new Exception('Unable to log in');
+  //     }
+  //
+  //     // if (ftp_put($ftp_conn, $onlineFileDestination, $fileImage, FTP_ASCII)) {
+  //     //     echo "successfully uploaded $fileImage\n";
+  //     //     exit;
+  //     //  } else {
+  //     //     echo "There was a problem while uploading $fileImage\n";
+  //     //     exit;
+  //     //     }
+  // //    print_r(ftp_nlist($ftp_conn, ".")); DO NOT WRITE OR ECHO SHIT
+  //     ftp_close($ftp_conn);
+  //   }
+  //
+  //   catch (Exception $e) {
+  //       echo "Failure: " . $e->getMessage();
+  //   }
 }
