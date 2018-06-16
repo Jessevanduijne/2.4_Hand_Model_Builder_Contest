@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" >
     <link rel="stylesheet" type="text/css" href="../css/wedstrijd/main.css">
-
     <?php
     require_once("./scripts/getvisitor.php");
     require_once("./db/db_hand.php");
@@ -29,6 +28,7 @@
     //$hand = $db->getById($handId);
 
     ?>
+
 
     <!--Facebook-->
     <meta property="og:url"                content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
@@ -98,7 +98,6 @@
 
 
 <footer>
-
     <!-- 3RD Party Libraries -->
     <script type="text/javascript" src="../scripts/lib/three.js"></script>
     <script type="text/javascript" src="../scripts/lib/OBJLoader.js"></script>
@@ -122,5 +121,11 @@
     <script type="text/javascript" src="../css/shared/_site.js"></script>
 
     <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
+
+    <script type="text/javascript">
+        updateModel(scene, DEFAULT_MODEL_COLOR);
+        HARDCODED_3DMODEL_PATH = "<?php echo $hand->getObject() ?>";
+        console.log(HARDCODED_3DMODEL_PATH);
+    </script>
 </footer>
 </html>
