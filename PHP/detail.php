@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/wedstrijd/main.css">
 
     <?php
+    require_once("./models/getvisitor.php");
     include_once("./models/db_hand.php");
     $db = new dbHand();
 
@@ -72,12 +73,13 @@
         function voteHand(){
         var handId =  <?php echo $handId ?>;
 
-
         var score = document.getElementById("score").innerHTML;
         var newScore = parseInt(score) + 1;
 
         document.getElementById("score").innerText = newScore;
-
+        document.getElementById("stemKnop").innerText = "Stem opgenomen!";
+        document.getElementById("stemKnop").setAttribute('onclick', "");
+            document.getElementById("stemKnop").setAttribute('class', "btn btn-large btn-red");
         var data = {
             'id': handId
         }

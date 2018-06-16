@@ -128,5 +128,14 @@ a.btn,.btn {
     border-color: #3CB371;
 }
 
+.btn-red {
+    color: #B22222;
+    border-color: #B22222;
+}
+.btn-red:hover {
+    background: #B22222;
+    color: #fff;
+    border-color: #B22222;
+}
 
 

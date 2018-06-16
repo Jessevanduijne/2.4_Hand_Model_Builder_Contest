@@ -6,12 +6,10 @@
  * Time: 21:12
  */
 
-    require_once('Models/db_hand.php');
-    //echo "<script> console.log('addvote id recieved from $_POST: .$id.</script>";
-    $db = new dbHand();
+//setcookie('test', 'recieved',  2147483647, '/');
+
     $id = $_POST['id'];
-    $db->addScore($id);
+    $ip = $_POST['ip'];
 
-
-
-
+    require_once('Models/db_hand.php');
+    $dbHand = new dbHand();
