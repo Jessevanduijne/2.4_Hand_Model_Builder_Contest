@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="../css/landing-page/animate.min.css">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="../css/shared/materialize.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/shared/materialize.min.css"/>
 
         <title>Leaderbord - 100 Handen voor Vietnam</title>
 

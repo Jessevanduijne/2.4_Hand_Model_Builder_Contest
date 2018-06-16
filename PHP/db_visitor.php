@@ -28,17 +28,13 @@ class db_visitor
     public function Register(){
         $visitor = null;
 
-        require_once("./scripts/getguid.php");
-        require_once("./Models/visitor.php");
+        require_once("./getguid.php");
+        require_once("./visitor.php");
 
         $uid = getGUID();
         $query = "INSERT INTO visitor (uid) VALUES ('".$uid."')";
 
         $this->MySQL->query($query);
         return $uid;
-    }
-
-    public function getIdFromUid($uid){
-
     }
 }
