@@ -9,7 +9,8 @@
 //setcookie('test', 'recieved',  2147483647, '/');
 
     $id = $_POST['id'];
-    $ip = $_POST['ip'];
 
-    require_once('Models/db_hand.php');
+    require_once('../db/db_hand.php');
     $dbHand = new dbHand();
+
+    $dbHand->addScore($id);
