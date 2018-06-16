@@ -2,7 +2,7 @@
   "Database": {
     "username": "root",
     "password": "",
-    "hostname": "localhost",
+    "hostname": "127.0.0.1",
     "table":"hand_test"
   },
   "Login":{

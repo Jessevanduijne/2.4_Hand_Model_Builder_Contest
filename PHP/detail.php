@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" >
     <link rel="stylesheet" type="text/css" href="../css/wedstrijd/main.css">
     <?php
-    require_once("./scripts/getvisitor.php");
-    require_once("./db/db_hand.php");
+    require_once("./getvisitor.php");
+    require_once("./db_hand.php");
     $db = new dbHand();
 
     $handId = $_GET['id'];
@@ -71,7 +71,7 @@
         openNav();
 
         function voteHand(){
-        var handId =  <?php echo $handId ?>;
+        var handId = <?php echo $handId ?>;
 
         var score = document.getElementById("score").innerHTML;
         var newScore = parseInt(score) + 1;
@@ -79,15 +79,17 @@
         document.getElementById("score").innerText = newScore;
         document.getElementById("stemKnop").innerText = "Stem opgenomen!";
         document.getElementById("stemKnop").setAttribute('onclick', "");
-            document.getElementById("stemKnop").setAttribute('class', "btn btn-large btn-red");
+        document.getElementById("stemKnop").setAttribute('class', "btn btn-large btn-red");
+
+
+        console.log("Recording vote...");
+
         var data = {
             'id': handId
         }
-        console.log(data.id);
-        console.log(handId);
         $.ajax({
             type: 'post',
-            url:'addvote.php',
+            url:'./addvote.php',
             data: data
         }
         )};

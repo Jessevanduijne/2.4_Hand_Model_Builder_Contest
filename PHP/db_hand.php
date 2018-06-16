@@ -1,20 +1,24 @@
 <?php
-require_once "db.php";
-
-
-class dbHand extends db{
-    private $hostname, $username, $password, $tablename;
+class dbHand
+{
     private $MySQL;
-    private $db;
 
     public function __construct(){
-        $db = new db();
-        $this->MySQL = $db->returnMySQL();
+        $this->MySQL = $this->init();
+    }
+
+    private function init(){
+        $str = file_get_contents("./config.json", true); //Krijg gegevens van config.json file
+        $json = json_decode($str, true); // zet JSON om in een PHP-array
+        //Test de functie:
+        //echo '<pre>' . print_r($json, true) . '</pre>';
+
+        return new mysqli($json['Database']['hostname'], $json['Database']['username'], $json['Database']['password'], $json['Database']['table']);
     }
 
     public function getAllHands(){
         //Hand model inladen
-        require_once('./Models/hand.php');
+        require_once('./hand.php');
         $hands = array();
 
         //Query klaarzetten
@@ -31,14 +35,12 @@ class dbHand extends db{
                 array_push($hands, $hand);
             }
         }
-
-        $this->MySQL->close();
         return $hands;
     }
 
     public function getLeaderBoard(){
         //Hand model inladen
-        require_once('./Models/hand.php');
+        require_once('./hand.php');
         $hands = array();
 
         //Query klaarzetten
@@ -52,12 +54,11 @@ class dbHand extends db{
                 array_push($hands, $hand);
             }
         }
-        $this->MySQL->close();
         return $hands;
     }
 
     public function getById($id){
-        require_once('./Models/hand.php');
+        require_once('./hand.php');
         $query = "SELECT * FROM hands WHERE id = ".$this->MySQL->real_escape_string($id);
         $hand = null;
         $result = $this->MySQL->query($query);
@@ -66,20 +67,18 @@ class dbHand extends db{
             while($row = $result->fetch_object()){
                 $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->image, $row->object, $row->date);
             }
-            $this->MySQL->close();
             return $hand;
         }
         else{
-            $this->MySQL->close();
             return null;
         }
     }
 
     public function addScore($id){
-        $query = "UPDATE hands SET score = score + 1 WHERE id = ".$id;
+        //$id = $this->MySQL->real_escape_string($id);
+
+        $query = "UPDATE hands SET score = score + 1 WHERE id = $id";
 
         $this->MySQL->query($query);
-
-        $this->MySQL->close();
     }
 }

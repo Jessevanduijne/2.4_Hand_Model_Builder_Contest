@@ -7,8 +7,8 @@
  */
 
 if (!isset($_COOKIE['visitor_guid'])){
-    require_once('./db/visitor_db.php');
-    $visitor_db = new visitor_db();
+    require_once('./db_visitor.php');
+    $visitor_db = new db_visitor();
 
     if (!isset($_COOKIE['visitor_guid'])){
         setcookie('visitor_guid', $visitor_db->Register());

@@ -44,11 +44,4 @@ class hand
     public function getScore(){
         return $this->score;
     }
-
-    public function voteHand(){
-        require_once("db_hand.php");
-        $db = new dbHand();
-
-        $db->addScore($this->id);
-    }
 }

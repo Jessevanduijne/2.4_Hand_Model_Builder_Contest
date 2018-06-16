@@ -1,6 +1,6 @@
 <html>
-    <?php require_once('./db/db_hand.php');
-    require_once("./scripts/getvisitor.php");
+    <?php require_once('./db_hand.php');
+    require_once("./getvisitor.php");
     $db = new dbHand();
 
     $hands = $db->getLeaderBoard();

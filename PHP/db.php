@@ -14,8 +14,8 @@ class db
         $this->MySQL = $this->init();
     }
 
-    private function init(){
-        $str = file_get_contents("./Config/config.json", true); //Krijg gegevens van config.json file
+    public function init(){
+        $str = file_get_contents("./config.json", true); //Krijg gegevens van config.json file
         $json = json_decode($str, true); // zet JSON om in een PHP-array
         //Test de functie:
         //echo '<pre>' . print_r($json, true) . '</pre>';
@@ -23,7 +23,7 @@ class db
         return new mysqli($json['Database']['hostname'], $json['Database']['username'], $json['Database']['password'], $json['Database']['table']);
     }
 
-    protected function returnMySQL(){
+    public function returnMySQL(){
         return $this->MySQL;
     }
 }
