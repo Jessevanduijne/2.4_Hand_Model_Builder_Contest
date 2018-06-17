@@ -27,12 +27,7 @@ function save_screenshot()
 {
     //Set the value of the hidden image input value to a snapshot of the renderer
     $("#hidden_image").val(renderer.domElement.toDataURL('image/png'));
-
-    //Set the value of the hidden model input value to a parse of the scene
-    //Help: This value holds the raw OBJ data
     $("#hidden_model_input").val(save_model());
-
-    $("#image-form").submit();
 }
 
 //Save the screenshot
