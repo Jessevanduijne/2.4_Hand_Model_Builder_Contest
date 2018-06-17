@@ -21,6 +21,10 @@ ob_end_clean();
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-grid.css">
+
+    <script type="text/javascript" src="../scripts/lib/jQuery.js"></script>
+
+    <title>Handbeheer - 100 Handen voor Vietnam</title>
 </head>
 <body>
 <br/>
@@ -32,7 +36,7 @@ ob_end_clean();
 
     <div class="jumbotron">
         <p>
-            <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Ga terug naar de administratiehome.</a>
+            <a class="btn btn-lg btn-success" href="admindashboard.php" role="button">Ga terug naar de administratiehome.</a>
         </p>
 
         <p>
@@ -53,7 +57,7 @@ ob_end_clean();
                         echo "<td>".$hand->getNaam()."</td>";
                         echo "<td>".$hand->getHandname()."</td>";
                         echo "<td>".$hand->getScore()."</td>";
-                        echo "<td><a onclick='detail(".$hand->getId().")'><span style='color:blue'>klik</span></a></td>";
+                        echo "<td><a onclick='detail(".$hand->getId().")'><span style='color:blue'>👉 </span></a></td>";
                         echo "<td><a onclick='verwijder(".$hand->getId().")'><span style='color:red'>⨉</span></a></td>";
                     echo "<tr>";
                 }
@@ -69,7 +73,17 @@ ob_end_clean();
         }
 
         function verwijder(id) {
+            var result = confirm("Weet u zeker dat u de hand met het id " + id + " wilt verwijderen?");
 
+            if (result) {
+                $.ajax({
+                    url: 'deletehand.php',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    }
+                });
+            }
         }
     </script>
 

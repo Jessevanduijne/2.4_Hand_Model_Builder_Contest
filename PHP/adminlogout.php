@@ -13,7 +13,8 @@ if(isset($_COOKIE['admin_guid'])){
     $guid = $_COOKIE['admin_guid'];
 
     $db->removeAdminUID($guid);
-    unset( $_COOKIE['admin_guid']);
+
+    setcookie('admin_guid', '', time()-10, '/');
 
     echo '<script>window.location.href = "admin.php";</script>';
 }

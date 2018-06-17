@@ -30,7 +30,7 @@ class db_adminlogin
     }
 
     public function removeAdminUID($uid){
-        $query = "DELETE FROM adminuid WHERE uid = $uid";
+        $query = "DELETE FROM adminuid WHERE uid = ".$uid;
 
         $this->MySQL->query($query);
     }

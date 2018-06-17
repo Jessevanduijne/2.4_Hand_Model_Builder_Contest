@@ -15,6 +15,10 @@ require_once('admincheck.php');
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-grid.css">
+
+    <script type="text/javascript" src="../scripts/lib/jQuery.js"></script>
+
+    <title>Administratiepagina - 100 Handen voor Vietnam</title>
 </head>
 <body>
 <br/>
@@ -28,8 +32,10 @@ require_once('admincheck.php');
         <p class="lead">Via de amdministratiepagina kunt u verschillende aspecten beheren. </p>
         <p>
             <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
-            <a class="btn btn-lg btn-success" href="./wijzigwachtwoord.php" role="button">Wijzig de administrator wachtwoord.</a>
-            <a class="btn btn-lg btn-success" href="./wijzigdatabase.php" role="button">Wijzig van database.</a>
+        </p>
+
+        <p>
+            <a class="btn btn-medium btn-warning" href="adminlogout.php">uitloggen</a>
         </p>
     </div>
 

@@ -18,7 +18,8 @@ session_start();
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <link rel="stylesheet" type="text/css" href="../css/shareIntegratie/style.css">
     <link rel="stylesheet" type="text/css" href="../css/admin/admin.css">
-    <title>CSVN - Administratiepagina voor 100 Handen voor Vietnam</title>
+
+    <title>Inlogpagina - 100 Handen voor Vietnam</title>
 </head>
 <body>
     <section class="loginsection">
@@ -32,7 +33,7 @@ session_start();
     </section>
 </body>
 
-<script>
+<script type="text/javascript">
     function logIn(){
         $("#loginform").submit(function (event) {
 

@@ -81,4 +81,10 @@ class dbHand
 
         $this->MySQL->query($query);
     }
+
+    public function deleteById($id){
+        $query = "DELETE FROM hands WHERE id = ".$id;
+
+        $this->MySQL->query($query);
+    }
 }
