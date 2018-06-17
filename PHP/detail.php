@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" type="text/css" href="../css/wedstrijd/main.css">
 
+    <title>Hand detailpagina- 100 Handen voor Vietnam</title>
+
     <?php
     require_once("./getvisitor.php");
     require_once("./db_hand.php");
@@ -92,9 +94,8 @@
                 type: 'post',
                 url:'./addvote.php',
                 data: data
-            }
-            );}
-
+                });
+        }
     </script>
 </body>
 
