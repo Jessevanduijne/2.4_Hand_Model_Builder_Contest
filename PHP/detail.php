@@ -92,9 +92,8 @@
                 type: 'post',
                 url:'./addvote.php',
                 data: data
-            }
-            );}
-
+                });
+        }
     </script>
 </body>
 
