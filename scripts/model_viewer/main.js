@@ -1,5 +1,8 @@
 window.onload = init;
 var scene = new THREE.Scene();
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
+var camera;
 
 //The function that is run once when the page loads
 function init()
@@ -7,6 +10,7 @@ function init()
     //Create a new (more flexible) GUI panel
     var gui;
 
+    //document.addEventListener("click", mouseClick,false);
     //var customContainer = document.getElementById('gui-container');
     //customContainer.appendChild(gui.domElement);
 
@@ -14,7 +18,7 @@ function init()
      scene = new THREE.Scene();
 
     //Create camera
-    var camera = createCamera
+    camera = createCamera
     (
         3,              //x position
         0,              //y position
@@ -28,6 +32,7 @@ function init()
 
     //Load the model
     var geometry = loadModel(scene, HARDCODED_3DMODEL_PATH, DEFAULT_MODEL_COLOR, 0.014);
+    createStandard(scene,DEFAULT_MODEL_COLOR,null,null);
 
     //Create a light source (& sphere to visualize source)
     var light = createPointLight(0.8, 1, 2, 2);
@@ -82,3 +87,25 @@ function update(renderer, scene, camera, control)
         update(renderer, scene, camera, control);
     });
 }
+
+//function getMouseLocation(event){
+ //mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+ //mouse.y = (event.clientY / window.innerHeight) * 2 + 1;
+ //console.log(mouse);
+
+ //raycaster.setFromCamera(mouse, camera);
+ //var intersects = raycaster.intersectObjects(scene.children);
+
+ //if(intersects.length > 0) {
+  //var point = intersects[0].point;
+  //return new THREE.Vector3(point.x, point.y, point.z);
+ //}
+//}
+
+//function mouseClick(event) {
+ //var position = getMouseLocation(event);
+
+ //var mesh = creatimagemesh(position);
+
+ //scene.add(mesh);
+//}

@@ -42,23 +42,29 @@
 
         <div id="Kleur" class="tabcontent">
           <h2>Kleur</h2>
-
         <form>
-            Achtergrondkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()">
-            Tekenkleur : <input type="color" name="draw_color" onchange="startDrawing()">
-            <button type="button" onclick="stopDrawing()">Stop</button>
+            Handkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()"> </br>
+            Standaard kleur : <input type="color" id="standardcolor" name="standardColor" onchange="changeStandardColor()">
           </form>
           <h2>Tekst</h2>
           <form>
-            <input type="text">
-            <input type="submit">
-            <input type="reset">
+            <button type="button" class="imagebutton" onclick="changeText(0)"><img src='../img/text1.png'></button>
+            <button type="button" class="imagebutton" onclick="changeText(1)"><img src='../img/text2.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeText(2)"><img src='../img/text3.png'> </button></br>
+            <button type="button" class="imagebutton" onclick="changeText(3)"><img src='../img/text4.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeText(4)"><img src='../img/text5.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeText(5)"><img src='../img/text6.png'> </button>
+            <button type="button" onclick="deleteText()"> Reset </button>
           </form>
-
           <h2>Afbeelding</h2>
           <form>
-            <input type="file" accept="image/*" id="UserImage" accept="image/*" onchange="">
-            <button type="reset" value="Reset">Reset</button>
+            <button type="button" class="imagebutton" onclick="changeImage(0)"> <img src='../img/csvn.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeImage(1)"> <img src='../img/vietnamFlag.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeImage(2)"> <img src='../img/littleGirl.jpg'> </button></br>
+            <button type="button" class="imagebutton" onclick="changeImage(3)"> <img src='../img/growth.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeImage(4)"> <img src='../img/VietnamesKids.png'> </button>
+            <button type="button" class="imagebutton" onclick="changeImage(5)"> <img src='../img/growth2.png'> </button>
+            <button type="button" onclick="deleteImg()"> Reset </button>
           </form>
         </div>
 
@@ -86,6 +92,9 @@
 </div>
 
 <script>
+var standardColor = null;
+var textIndex = null;
+var imgIndex = null;
 
     function openTab(evt, tab) {
         var i, tabcontent, tablinks;
@@ -115,6 +124,31 @@
       modelColor = document.getElementById("changedColor").value;
       console.log();
       updateModel(scene, modelColor);
+    }
+
+    function changeText(index){
+      textIndex = index;
+      UpdateMaterial(scene, standardColor, imgIndex, textIndex);
+    }
+
+    function changeImage(index){
+      imgIndex = index;
+      UpdateMaterial(scene, standardColor, imgIndex, textIndex);
+    }
+
+    function changeStandardColor(){
+      standardColor = document.getElementById("standardcolor").value;
+      UpdateMaterial(scene, standardColor, imgIndex, textIndex);
+    }
+
+    function deleteText(){
+      textIndex = null;
+      UpdateMaterial(scene, standardColor, imgIndex, textIndex);
+    }
+    
+    function deleteImg(){
+      imgIndex = null;
+      UpdateMaterial(scene, standardColor, imgIndex, textIndex);
     }
 
     function openNav() {
