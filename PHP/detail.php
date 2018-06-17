@@ -125,7 +125,7 @@
 
     <script type="text/javascript">
         updateModel(scene, DEFAULT_MODEL_COLOR);
-        HARDCODED_3DMODEL_PATH = "<?php echo $hand->getObject() ?>";
+        HARDCODED_3DMODEL_PATH = "<?php echo '../content/user_screenshots/'.$hand->getObject() ?>";
         console.log(HARDCODED_3DMODEL_PATH);
     </script>
 

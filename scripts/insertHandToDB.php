@@ -13,11 +13,12 @@ if ($conn->connect_error) {
 $handname = $_POST['handName'];
 $fbName   = $_POST["uploaderName"];
 $dateNow  = date('Y-m-d H:i:s');
-$image = $_SESSION['imagepath'];
-$object
+$image = $_SESSION['imagename'];
+$modelName = $_POST['modelPath'];
+$email = $_POST['email'];
 
 $sql = "INSERT INTO hands (`handname`, `naam`, `email`, `facebook`, `twitter`, `image`, `object`, `date`)
-        VALUES ('$handname', '$fbName', 'jessevanduijne@live.nl', 1, 1, '$image', '3dshit', '$dateNow')";
+        VALUES ('$handname', '$fbName', '$email', 1, 1, '$image', '$modelName', '$dateNow')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
