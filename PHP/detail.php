@@ -43,9 +43,9 @@
             <span class="hand-naam">Gemaakt door: <?php echo $hand->getNaam(); ?></span><br/><br/>
             <span class="hand-generik">Aantal keer op gestemd: <span id="score"> <?php echo $hand->getScore(); ?></span> </span>
 
-            <a id="stemKnop" class="btn btn-medium btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/><br/>
+            <a id="stemKnop" class="btn-detail btn-medium btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/><br/>
 
-            <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-blue btn-large">Doneer</a><br/><br/>
+            <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn-detail btn-blue btn-large">Doneer</a><br/><br/>
 
             <span class="hand-generik">Deel deze hand:</span>
 
