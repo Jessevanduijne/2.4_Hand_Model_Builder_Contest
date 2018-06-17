@@ -52,7 +52,7 @@
                     <div id="button-wrapper">
                         <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right ">personaliseer nu</a>
                         <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large">Doneer</a>
-                        <a href="#" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
+                        <a href="/Project2.4/php/leaderbord.php" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
                     </div>
 
                 </div>
