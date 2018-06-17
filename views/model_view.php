@@ -90,6 +90,13 @@
                                 var goedkeuringDeelname = $('#handSubmitted').html("Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!");
                             });
                         }
+            
+                        $.post("../scripts/ftp.php", {
+                          imagename: hName,
+                          imagefile: imageFile
+                        }, function(result) {
+                          console.log(result);
+                        });
                     });
                 });
             });
