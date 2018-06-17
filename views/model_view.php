@@ -65,13 +65,24 @@
 
             //Teije: Image opslaan op server
             var imageFile = $("#hidden_image").val();
+            var imageObject = $("#hidden_model_input").val();
 
-            $.post("../scripts/file-handling/upload.php", {imagename:hName, imagefile:imageFile}, function(result){
-                alert("Je image " + hName + " is succesvol ge-upload! \nImage-file: ");
-                var result = JSON.parse(result);
-                console.log("result.filename: " + result.filename);
-                imagenaam = result.filename;
-            });
+            // $.post("../scripts/file-handling/upload.php", {imagename:hName, imagefile:imageFile, imageObject:imageObject}, function(result){
+            //     alert("Je image " + hName + " is succesvol ge-upload!");
+            //     var result = JSON.parse(result);
+            //     console.log("result.filename: " + result.filename);
+            //     imagenaam = result.filename;
+            //
+            // });
+
+                  $.ajax({
+              url:'../scripts/file-handling/upload.php',
+              type:'POST',
+              data: {
+                  imagename:hName,
+                  imagefile:imageFile,
+                  imageObject:imageObject
+            }});
           });
         });
       });
@@ -145,6 +156,7 @@
                      placeholder="Voer hier een naam in"
                      value="<?php if (isset($_POST['handName'])) echo $_POST['handName']; ?>"/>
             <input type="hidden" name="render_snapshot" id="hidden_image" value=""/>
+            <textarea name="render_model" id="hidden_model_input" value="" class="hidden"></textarea>
 
             <h2> Doe mee aan de wedstrijd: </h2>
             <button type="submit" id="wedstrijdButton" onclick="vulNaamIn(); return false;">

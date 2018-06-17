@@ -67,3 +67,26 @@ if(isset($_POST['imagename']) && isset($_POST['imagefile']))
   //       echo "Failure: " . $e->getMessage();
   //   }
 }
+
+if(isset($_POST['render_model']))
+{
+    //Escape injection
+    $filename = htmlspecialchars($_POST['image_name']);
+
+    //If file name is empty; set default 'no-name' value
+    $filename =  empty($filename) ? 'no-name' : $filename;
+    $objValues = $_POST['imageObject'];
+
+    //Set model file path
+    $fileDestination = '../content/user_screenshots/' .  time() ."-". $filename . ".obj" ;
+    echo $fileDestination;
+    file_put_contents($fileDestination, $objValues.PHP_EOL, FILE_APPEND | LOCK_EX);
+
+    //Set session model path
+    $_SESSION['modelpath'] = $fileDestination;
+
+    //Return to the render view page and confirm the action in the browser
+    //Uncomment these to re-enable redirecting
+    header("Location: /Project2.4/views/model_view.php?state=success");
+    die();
+}

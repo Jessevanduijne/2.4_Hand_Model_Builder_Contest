@@ -27,13 +27,13 @@ function save_screenshot()
 {
     //Set the value of the hidden image input value to a snapshot of the renderer
     $("#hidden_image").val(renderer.domElement.toDataURL('image/png'));
+    $("#hidden_model_input").val(save_model());
 }
 
 //Save the screenshot
-// function save_model()
-// {
-//     //Create a new exporter, parse the contents of the scene & return
-//     var result = new THREE.OBJExporter().parse(scene);
-//     return result;
-// }
-
+function save_model()
+{
+    //Create a new exporter, parse the contents of the scene & return
+    var result = new THREE.OBJExporter().parse(scene);
+    return result;
+}
