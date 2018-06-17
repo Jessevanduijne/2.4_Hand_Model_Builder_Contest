@@ -79,53 +79,56 @@
     <br/>
     <section>
         <?php
-        echo "<section class='rowcards'>";
-        for ($x = 0; $x <= 2; $x++) {
+        if(is_array($hands)) {
+            echo "<section class='rowcards'>";
+            for ($x = 0; $x <= 2; $x++) {
 
-            //De eerste 3 handen door itereren, --pakt de top 3 handen--
-            echo "<a href='./detail.php?id=".$hands[$x]->getId()."'/><section class='card'>";
-            echo "<h2>", $x+1, "e plaats</h2>";
-            echo "<section class='card-image'>";
-            //Hieronder moet TREEJS een hand renderen!
-            echo "<img src='".$hands[$x]->getImageRef()."'>";
+                //De eerste 3 handen door itereren, --pakt de top 3 handen--
+                echo "<a href='./detail.php?id=" . $hands[$x]->getId() . "'/><section class='card'>";
+                echo "<h2>", $x + 1, "e plaats</h2>";
+                echo "<section class='card-image'>";
+                //Hieronder moet TREEJS een hand renderen!
+                echo "<img src='../content/user_screenshots/" . $hands[$x]->getImageRef() . "'>";
 
-            //nieuwMethod() vervangen met werkende stem functie.
+                //nieuwMethod() vervangen met werkende stem functie.
 
+                echo "</section>";
+                echo "";
+                echo "<h2 class='card-title'>" . $hands[$x]->getNaam() . "</h2>";
+                echo "</section></a>";
+
+            }
             echo "</section>";
-            echo "";
-            echo "<h2 class='card-title'>".$hands[$x]->getNaam()."</h2>";
-            echo "</section></a>";
-
         }
-        echo "</section>";
         ?>
     </section>
     <!-- weergeven van de 'rest' -->
     <h2>4 t/m 100</h2>
     <?php
-    echo "<section class='rowcards'>";
+    if(is_array($hands)) {
+        echo "<section class='rowcards'>";
 
-    if(count($hands)<100) {
-        $size = count($hands);
-    }
-    else {
-        $size = 100;
-    }
+        if (count($hands) < 100) {
+            $size = count($hands);
+        } else {
+            $size = 100;
+        }
 
-    for ($x = 3; $x < $size; $x++) {
+        for ($x = 3; $x < $size; $x++) {
 
-        //De eerste 3 handen door itereren, --pakt de top 3 handen--
-        echo "<a href='./detail.php?id=".$hands[$x]->getId()."'/><section class='card-small'>";
-        echo "<h2>", $x + 1, "e plaats</h2>";
-        echo "<section class='card-image'>";
-        echo "<h2 class='card-title'>".$hands[$x]->getNaam()."</h2>";
-        //nieuwMethod() vervangen met werkende stem functie.
+            //De eerste 3 handen door itereren, --pakt de top 3 handen--
+            echo "<a href='./detail.php?id=" . $hands[$x]->getId() . "'/><section class='card-small'>";
+            echo "<h2>", $x + 1, "e plaats</h2>";
+            echo "<section class='card-image'>";
+            echo "<h2 class='card-title'>" . $hands[$x]->getNaam() . "</h2>";
+            //nieuwMethod() vervangen met werkende stem functie.
 
+            echo "</section>";
+            echo "</section></a>";
+
+        }
         echo "</section>";
-        echo "</section></a>";
-
     }
-    echo "</section>";
     ?>
     <section>
 

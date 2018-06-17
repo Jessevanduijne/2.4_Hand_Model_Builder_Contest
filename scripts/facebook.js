@@ -36,7 +36,8 @@ function vulNaamIn(){
   }
 
   // Bij true: hand wordt opgeslagen (Teije)
-  save();
+  save_screenshot();
+  save_model();
 }
 
 function submitAndShare()
