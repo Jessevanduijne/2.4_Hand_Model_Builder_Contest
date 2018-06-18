@@ -18,3 +18,6 @@ var DEFAULT_MODEL_COLOR = "#fffefc";
 
 //File paths
 var HARDCODED_3DMODEL_PATH = '../models/Hand_Fist.obj';
+
+// imagenaam
+var ftpimage = "";

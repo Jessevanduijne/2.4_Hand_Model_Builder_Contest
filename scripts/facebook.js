@@ -40,6 +40,7 @@ function vulNaamIn(){
   save_model();
 }
 
+document.write('<script src="../scripts/global.js.variables.js" type="text/javascript"></script>');
 function submitAndShare()
 {
   var handname = document.getElementById("handName").value;
@@ -51,8 +52,8 @@ function submitAndShare()
 
   else {
     FB.api('/me', function(response) {
-      var fbname = response.name;                                             // imagenaam is een globale variabele
-      var afbeelding = "http://localhost/Project2.4/content/user_screenshots/" + imagenaam; // Let op: image moet minimaal 200x200pix zijn
+      var fbname = response.name;               // imagenaam is een globale variabele
+      var afbeelding = "http://552779.infhaarlem.nl/handimg/" + ftpimage; // Let op: image moet minimaal 200x200pix zijn
       var titel = 'Check de hand ' + handname + ' van ' + fbname;
       var beschrijving = fbname + ' heeft deze hand ontworpen om het goede doel Child Surgery Vietnam onder de aandacht te brengen. Doneer snel en ontwerp ook een hand!';
 
@@ -74,4 +75,23 @@ function overrideMetaData(overrideTitle, overrideDescription, overrideImage)
 			}
 		})
 	});
+}
+
+function shareDetail(id, overrideTitle, overrideDescription, overrideImage){
+  // FB.ui({
+  //   method: 'share',
+  //   href: 'http://127.0.0.1/Project2.4/PHP/detail.php?id=' + id
+  //   }, function(response){});
+  FB.ui({
+		method: 'share_open_graph',
+		action_type: 'og.shares',
+		action_properties: JSON.stringify({
+			object: {
+        'og:url': 'http://127.0.0.1/Project2.4/PHP/detail.php?id=' + id,
+				'og:title': overrideTitle,
+				'og:description': overrideDescription,
+        'og:image': overrideImage
+			}
+		})
+  })
 }

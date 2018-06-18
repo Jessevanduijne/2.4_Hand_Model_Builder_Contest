@@ -73,6 +73,7 @@
                         var modelPath = result.modelName;
                         var email = response.email;
                         var fullImage = result.fullImageName;
+                        ftpimage = fullImage;
 
                         console.log(fullImage);
 
@@ -196,7 +197,7 @@
 
         <section id="top100section">
             <h3> Bekijk ontwerpen van andere deelnemers: </h3>
-            <button id="top100button"> Top 100</button>
+            <a class="btn btn-large btn-blue" href="../PHP/leaderbord.php" id="top100button"> Top 100</a>
             <br>
         </section>
     </div>
