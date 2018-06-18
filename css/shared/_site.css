@@ -23,6 +23,12 @@ body
 
 }
 
+.imagebutton img{
+  height: 120px;
+  width: 120px;
+  background-size: 100%;
+}
+
 .wedstrijd-btn
 {
     padding-left: 20em;

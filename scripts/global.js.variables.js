@@ -16,5 +16,8 @@ var WINDOW_RATIO = window.innerWidth/window.innerHeight;
 var BACKGROUND_COLOR = "#eaeaea";
 var DEFAULT_MODEL_COLOR = "#fffefc";
 
+var IMAGE_OPTIONS = [ "../img/csvn.png", "../img/vietnamFlag.png", "../img/littleGirl.jpg", "../img/growth.png", "../img/VietnamesKids.png", "../img/growth2.png"];
+var TEXT_OPTIONS = ["../img/text1.png", "../img/text2.png", "../img/text3.png", "../img/text4.png", "../img/text5.png", "../img/text6.png"];
+
 //File paths
 var HARDCODED_3DMODEL_PATH = '../models/Hand_Fist.obj';
