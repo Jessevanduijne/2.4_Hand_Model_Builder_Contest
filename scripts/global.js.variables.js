@@ -21,3 +21,6 @@ var TEXT_OPTIONS = ["../img/text1.png", "../img/text2.png", "../img/text3.png", 
 
 //File paths
 var HARDCODED_3DMODEL_PATH = '../models/Hand_Fist.obj';
+
+// imagenaam
+var ftpimage = "";

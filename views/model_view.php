@@ -66,13 +66,18 @@
                     }, function (result) {
                         alert("Je image " + hName + " is succesvol ge-upload!");
 
+                        console.log(result);
+
                         var result = JSON.parse(result);
 
                         var modelPath = result.modelName;
                         var email = response.email;
+                        var fullImage = result.fullImageName;
+                        ftpimage = fullImage;
+
+                        console.log(fullImage);
 
                         console.log(modelPath);
-
 
                         if (result.status) {
                             // $.post laadt data van de server met een post request (AJAX)
@@ -90,6 +95,12 @@
                                 var goedkeuringDeelname = $('#handSubmitted').html("Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!");
                             });
                         }
+
+                        $.post("../scripts/ftp.php", {
+                          imagefile: fullImage
+                        }, function(result) {
+                          console.log(result);
+                        });
                     });
                 });
             });
@@ -192,7 +203,7 @@
 
         <section id="top100section">
             <h3> Bekijk ontwerpen van andere deelnemers: </h3>
-            <button id="top100button"> Top 100</button>
+            <a class="btn btn-large btn-blue" href="../PHP/leaderbord.php" id="top100button"> Top 100</a>
             <br>
         </section>
     </div>

@@ -4,6 +4,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/shareIntegratie/style.css">
     <link rel="stylesheet" type="text/css" href="../css/shared/_site.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
@@ -32,7 +33,39 @@
     <meta property="og:url"                content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
     <meta property="og:title"              content="<?php echo "Check de hand ".$hand->getHandname()." van ".$hand->getNaam() ?>" />
     <meta property="og:description"        content="<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"  />
-    <meta property="og:image"              content="<?php echo $hand->getImageRef() ?>" />
+    <meta property="og:image"              content="<?php echo 'http://552779.infhaarlem.nl/handimg/'.$hand->getImageRef() ?>" />
+
+    <script>
+    // Onderstaande JS-code staat hier omdat het direct ingeladen moet worden als de pagina opent.
+    // Initialiseer Facebook Javascript-SDK:
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '400725930337109',
+            xfbml: true,
+            version: 'v2.10'
+        });
+        checkLoginState();
+    };
+
+    // Laad de SDK in:
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function clickShare(){
+      var overrideUrl = "<?php echo $hand->getId(); ?>";
+      var overrideTitle = "<?php echo "Check de hand ".$hand->getHandname()." van ".$hand->getNaam() ?>";
+      var overrideDescription = "<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"
+      var overrideImage = "<?php echo 'http://552779.infhaarlem.nl/handimg/'.$hand->getImageRef() ?>";
+
+      shareDetail(overrideUrl, overrideTitle, overrideDescription, overrideImage);
+    }
+    </script>
 </head>
 
 <body id="margin-nul-fix">
@@ -52,8 +85,6 @@
             <span class="hand-generik">Deel deze hand:</span>
 
             <div class="social-share">
-                Facebook<br/>
-                Twitter
             </div>
 
         </section>
@@ -64,6 +95,7 @@
 
             Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies waar elke euro terecht komt.
         </section>
+        <input type="image" id="facebookBtn" onclick="clickShare();" class="clickIcon" src="../img/fb.png"/>
     </div>
 
     <script>
@@ -120,6 +152,7 @@
     <script type="text/javascript" src="../scripts/controllers/model.controller.js"></script>
     <script type="text/javascript" src="../scripts/controllers/camera.controller.js"></script>
     <script type="text/javascript" src="../css/shared/_site.js"></script>
+    <script type="text/javascript" src="../scripts/facebook.js"></script>
 
     <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
 
