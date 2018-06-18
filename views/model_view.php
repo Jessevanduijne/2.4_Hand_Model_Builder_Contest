@@ -66,13 +66,17 @@
                     }, function (result) {
                         alert("Je image " + hName + " is succesvol ge-upload!");
 
+                        console.log(result);
+
                         var result = JSON.parse(result);
 
                         var modelPath = result.modelName;
                         var email = response.email;
+                        var fullImage = result.fullImageName;
+
+                        console.log(fullImage);
 
                         console.log(modelPath);
-
 
                         if (result.status) {
                             // $.post laadt data van de server met een post request (AJAX)
@@ -90,10 +94,9 @@
                                 var goedkeuringDeelname = $('#handSubmitted').html("Uw hand, " + hName + ", is succesvol toegevoegd aan de wedstrijd, " + fbName + "!");
                             });
                         }
-            
+
                         $.post("../scripts/ftp.php", {
-                          imagename: hName,
-                          imagefile: imageFile
+                          imagefile: fullImage
                         }, function(result) {
                           console.log(result);
                         });

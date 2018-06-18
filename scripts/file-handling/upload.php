@@ -1,13 +1,15 @@
 <?php session_start();
 $MAX_FILE_SIZE = 10000000000;
 
+$filename;
+
 if(isset($_POST['imagename']) && isset($_POST['imagefile']))
 {
     //Escape injection
     $filename = htmlspecialchars($_POST['imagename']);
 
     $filename = time()."-".$_POST['imagename'].".png";
-
+    $_SESSION['image_file_name'] = $filename;
     //If file name is empty; set default 'no-name' value
     // $filename =  empty($filename) ? 'no-name' : $filename;
     //Image file save destination (made unique using a timestamp)
@@ -16,11 +18,15 @@ if(isset($_POST['imagename']) && isset($_POST['imagefile']))
 
     //Put the image from $_POST in the specified folder
     $fileImage = $_POST['imagefile'];
+    $_SESSION['imagefile'] = $fileImage;
     file_put_contents($fileDestination, file_get_contents($fileImage));
 
     //Set session image- name & path - used to pass along the values after the upload
     $_SESSION['imagename'] = $filename;
     $_SESSION['imagepath'] = $fileDestination;
+
+
+
 }
 
 if(isset($_POST['render_model']))
@@ -48,7 +54,8 @@ if(isset($_POST['render_model']))
         (
             "status" => true,
             "message" => "Success",
-            "modelName" => $fullModelName
+            "modelName" => $fullModelName,
+            "fullImageName" => $filename
         );
 
     echo json_encode($response);
