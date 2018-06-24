@@ -73,20 +73,19 @@
     <section id="scene"></section>
 <!--sidepanel-->
     <div id="mySidenav" class="sidenav scrollbar-primary">
+
         <section class="hand-informatie">
             <span class="hand-handnaam"><?php echo $hand->getHandname();?></span><br/><br/>
-            <span class="hand-naam">Gemaakt door: <?php echo $hand->getNaam(); ?></span><br/><br/>
+            <span class="hand-naam">Dit is de hand van <?php echo $hand->getNaam(); ?></span><br/><br/>
             <span class="hand-generik">Aantal keer op gestemd: <span id="score"> <?php echo $hand->getScore(); ?></span> </span>
 
-            <a id="stemKnop" class="btn-detail btn-medium btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/><br/>
+            <a id="stemKnop" class="btn-detail btn-medium btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/>
 
-            <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn-detail btn-blue btn-large">Doneer</a><br/><br/>
+            <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962" class="btn-green btn-detail btn-large">Doneer aan <br/> Child Surgery Vietnam</a><br/><br/>
 
             <span class="hand-generik">Deel deze hand:</span>
-
             <div class="social-share">
             </div>
-
         </section>
 
         <section class="CSVN-beschrijving hand-informatie">
@@ -101,6 +100,7 @@
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "500px";
+            $('#nav-icon').hide();
         }
         openNav();
 
@@ -116,7 +116,7 @@
             document.getElementById("stemKnop").setAttribute('onclick', "");
             document.getElementById("stemKnop").setAttribute('class', "btn btn-large btn-red");
 
-            console.log("Recording vote...");
+            // console.log("Recording vote...");
 
             var data = {
                 'id': handId

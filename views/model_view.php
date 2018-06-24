@@ -145,7 +145,11 @@
         <button type="button" class="imagebutton" onclick="changeText(3)"><img src='../img/text4.png'> </button>
         <button type="button" class="imagebutton" onclick="changeText(4)"><img src='../img/text5.png'> </button>
         <button type="button" class="imagebutton" onclick="changeText(5)"><img src='../img/text6.png'> </button>
-        <button type="button" onclick="deleteText()"> Reset </button>
+
+          <br/>
+          <br/>
+
+        <button type="button" onclick="deleteText()"> Verwijder tekst </button>
       </form>
       <h2>Afbeelding</h2>
       <form>
@@ -155,7 +159,11 @@
         <button type="button" class="imagebutton" onclick="changeImage(3)"> <img src='../img/growth.png'> </button>
         <button type="button" class="imagebutton" onclick="changeImage(4)"> <img src='../img/VietnamesKids.png'> </button>
         <button type="button" class="imagebutton" onclick="changeImage(5)"> <img src='../img/growth2.png'> </button>
-        <button type="button" onclick="deleteImg()"> Reset </button>
+
+          <br/>
+          <br/>
+
+        <button type="button" onclick="deleteImg()"> Verwijder Afbeelding </button>
       </form>
     </div>
 
