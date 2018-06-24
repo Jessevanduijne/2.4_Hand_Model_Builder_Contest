@@ -124,6 +124,7 @@ a.btn-detail,.btn-detail {
     box-sizing: border-box;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
+
 .btn-large {
     font-size: 1.0625em;
     padding: 0.5625em 1.5em;
@@ -143,6 +144,17 @@ a.btn-detail,.btn-detail {
     border-color: #B22222;
 }
 .btn-red:hover {
+    background: #B22222;
+    color: #fff;
+    border-color: #B22222;
+}
+
+
+.btn-voted {
+    color: #B22222;
+    border-color: #B22222;
+}
+.btn-voted:hover {
     background: #B22222;
     color: #fff;
     border-color: #B22222;
@@ -175,7 +187,6 @@ a.btn-detail,.btn-detail {
 
 rowcards{
     width: 100%;
-
 }
 
 .card-title{
