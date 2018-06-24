@@ -271,12 +271,16 @@ var imgIndex = null;
 
     function openNav() {
         document.getElementById("mySidenav").style.width = "500px";
+        $('#nav-icon').hide();
     }
 
     /* Set the width of the side navigation to 0 */
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        $('#nav-icon').show();
     }
+
+    openNav();
 </script>
 
 
