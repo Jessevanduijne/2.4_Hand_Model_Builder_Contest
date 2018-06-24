@@ -100,7 +100,7 @@
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "500px";
-            $('#nav-icon').hide();
+            // $('#nav-icon').hide();
         }
         openNav();
 
