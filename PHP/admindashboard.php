@@ -12,6 +12,14 @@ require_once('admincheck.php');
 
 <html>
 <head>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_TRACKING_ID');
+  </script>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap-grid.css">
