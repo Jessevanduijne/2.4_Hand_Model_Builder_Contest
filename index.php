@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/landing-page/etline-font.css">
     <link rel="stylesheet" href="css/landing-page/animate.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<!--    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>-->
 </head>
 <body id="top">
 
