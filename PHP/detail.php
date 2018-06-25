@@ -84,6 +84,7 @@
 <body id="margin-nul-fix">
 <!-- Hierop wordt de hand gerenderd:-->
 <section id="scene"></section>
+
 <!--sidepanel-->
 <div id="mySidenav" class="sidenav scrollbar-primary">
 
