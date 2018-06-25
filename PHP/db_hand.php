@@ -29,7 +29,7 @@ class dbHand
         if ($result) {
             while ($row = $result->fetch_object()) {
 
-                echo $row->naam;
+                //echo $row->naam;
 
                 $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);

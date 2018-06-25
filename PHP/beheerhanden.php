@@ -46,6 +46,7 @@ ob_end_clean();
                 <th>Gemaakt door</th>
                 <th>Naam</th>
                 <th>Score</th>
+                <th>Gedeeld op Facebook</th>
                 <th>In detail</th>
                 <th>Verwijder</th>
             </tr>
@@ -57,6 +58,7 @@ ob_end_clean();
                         echo "<td>".$hand->getNaam()."</td>";
                         echo "<td>".$hand->getHandname()."</td>";
                         echo "<td>".$hand->getScore()."</td>";
+                        echo "<td>".$hand->getFacebook()."</td>";
                         echo "<td><a onclick='detail(".$hand->getId().")'><span style='color:blue'>👉 </span></a></td>";
                         echo "<td><a onclick='verwijder(".$hand->getId().")'><span style='color:red'>⨉</span></a></td>";
                     echo "<tr>";

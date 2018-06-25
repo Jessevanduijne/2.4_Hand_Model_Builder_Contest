@@ -1,7 +1,7 @@
 <?php
 class hand
 {
-    private $id, $handname, $naam, $email, $score, $image_ref, $object, $date;
+    private $id, $handname, $naam, $email, $score, $facebook, $image_ref, $object, $date;
 
     public function __construct($id, $handname, $naam, $email, $score, $facebook, $image_ref, $object, $date)
     {
@@ -10,6 +10,7 @@ class hand
         $this->naam = $naam;
         $this->email = $email;
         $this->score = $score;
+        $this->facebook = $facebook;
         $this->image_ref = $image_ref;
         $this->object = $object;
         $this->date = $date;
