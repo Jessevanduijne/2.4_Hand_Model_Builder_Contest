@@ -121,11 +121,37 @@
 <div id="gui-container"></div>
 <span onclick="openNav()" id="nav-icon" class="glyphicon glyphicon-align-justify"></span>
 
+<div
+        style=
+        "
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 85%;
+            left: 43%;
+            font-size: 120%;
+        "
+>
+    Wil je meer weten over<br />
+    Child Surgery Vietnam?<br/>
+    <a
+            href="https://www.childsurgery-vietnam.org/"
+            style=
+            "
+            color: white;
+            font-size: 110%
+            "
+    >
+
+        <b> Klik hier voor meer informatie!</b>
+    </a>
+</div>
+
 <div id="mySidenav" class="sidenav scrollbar-primary">
     <div class="tab col-lg-12" id="tab-bar">
-        <button class="tablinks col-lg-3" onclick="openTab(event, 'Handen')" id="default">Handen</button>
-        <button class="tablinks col-lg-3" onclick="openTab(event, 'Kleur')">Kleur</button>
-        <button class="tablinks col-lg-3" onclick="openTab(event, 'Share')">Share</button>
+        <button class="tablinks col-lg-3" onclick="openTab(event, 'Handen')" id="default"><b style="font-size: 130%;">Stap 1:</b><br />Handen</button>
+        <button class="tablinks col-lg-3" onclick="openTab(event, 'Kleur')"><b style="font-size: 130%;">Stap 2:</b><br />Kleur</button>
+        <button class="tablinks col-lg-3" onclick="openTab(event, 'Share')">S<b style="font-size: 130%;">tap 3:</b><br />Share</button>
         <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
     </div>
 
