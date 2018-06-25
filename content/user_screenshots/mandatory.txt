@@ -1,0 +1,1 @@
+// Mandatory file. Needs to be here so /content/user_screenshots can get pushed.

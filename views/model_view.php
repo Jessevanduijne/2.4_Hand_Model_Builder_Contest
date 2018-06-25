@@ -145,7 +145,11 @@
         <button type="button" class="imagebutton" onclick="changeText(3)"><img src='../img/text4.png'> </button>
         <button type="button" class="imagebutton" onclick="changeText(4)"><img src='../img/text5.png'> </button>
         <button type="button" class="imagebutton" onclick="changeText(5)"><img src='../img/text6.png'> </button>
-        <button type="button" onclick="deleteText()"> Reset </button>
+
+          <br/>
+          <br/>
+
+        <button type="button" onclick="deleteText()"> Verwijder tekst </button>
       </form>
       <h2>Afbeelding</h2>
       <form>
@@ -155,7 +159,11 @@
         <button type="button" class="imagebutton" onclick="changeImage(3)"> <img src='../img/growth.png'> </button>
         <button type="button" class="imagebutton" onclick="changeImage(4)"> <img src='../img/VietnamesKids.png'> </button>
         <button type="button" class="imagebutton" onclick="changeImage(5)"> <img src='../img/growth2.png'> </button>
-        <button type="button" onclick="deleteImg()"> Reset </button>
+
+          <br/>
+          <br/>
+
+        <button type="button" onclick="deleteImg()"> Verwijder Afbeelding </button>
       </form>
     </div>
 
@@ -208,48 +216,6 @@
         </section>
     </div>
 </div>
-<!-- // Jesse -->
-
-<script>
-
-    function openTab(evt, tab) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tab).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    document.getElementById("default").click();
-
-    /* Set the width of the side navigation to 250px */
-    function changeModel(model) {
-        HARDCODED_3DMODEL_PATH = model;
-        console.log(HARDCODED_3DMODEL_PATH);
-        updateModel(scene, DEFAULT_MODEL_COLOR);
-    }
-
-    /* kayleigh */
-    function changeBGColor() {
-        modelColor = document.getElementById("changedColor").value;
-        updateModel(scene, modelColor);
-    }
-
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "500px";
-    }
-
-    /* Set the width of the side navigation to 0 */
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
 </div>
 
 <script>
@@ -313,12 +279,16 @@ var imgIndex = null;
 
     function openNav() {
         document.getElementById("mySidenav").style.width = "500px";
+        $('#nav-icon').hide();
     }
 
     /* Set the width of the side navigation to 0 */
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        $('#nav-icon').show();
     }
+
+    openNav();
 </script>
 
 

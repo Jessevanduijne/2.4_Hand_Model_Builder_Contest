@@ -8,6 +8,9 @@
 
 require_once('admincheck.php');
 
+$str = file_get_contents("./config.json", true); //Krijg gegevens van config.json file
+$json = json_decode($str, true); // zet JSON om in een PHP-array
+
 ?>
 
 <html>
@@ -24,16 +27,15 @@ require_once('admincheck.php');
 <br/>
 <div class="container">
     <div class="header clearfix">
-        <h3 class="text-muted">100 Handen voor Vietnam - administratie.</h3>
+        <h3 class="text-muted">100 Handen voor Vietnam - <?php echo $json['Login']['username'] ?>.</h3>
     </div>
 
     <div class="jumbotron">
-        <h1>Welkom, administrator!</h1>
+        <h1>Welkom, Jo!</h1>
         <p class="lead">Via de amdministratiepagina kunt u verschillende aspecten beheren. </p>
         <p>
             <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
         </p>
-
         <p>
             <a class="btn btn-medium btn-warning" href="adminlogout.php">uitloggen</a>
         </p>

@@ -15,7 +15,8 @@ if (isset($_GET['id'])){
         echo "<script type='text/javascript'>";
         echo "document.getElementById(\"stemKnop\").innerText = \"U heeft reeds gestemd!\";";
         echo "document.getElementById(\"stemKnop\").setAttribute('onclick', \"\");";
-        echo "document.getElementById(\"stemKnop\").setAttribute('class', \"btn btn-large btn-red\");";
+        echo "document.getElementById(\"stemKnop\").setAttribute('class', \"btn-detail btn-large btn-voted\");";
+//        echo "document.getElementById(\"stemKnop\").style.padding = '0x 10px 0px 10px';";
         echo "</script>";
     }
 }

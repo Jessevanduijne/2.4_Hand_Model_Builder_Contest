@@ -4,7 +4,7 @@ body{
 }
 
 .hand-informatie{
-    margin: 50px 0 0 50px;
+    margin: 50px 25px 0 25px;
     display: block;
 }
 
@@ -25,17 +25,24 @@ body{
 
 }
 
+#gaTerug{
+    margin-top: 60px;
+    font-size: large;
+}
+
 .hand-generik{
     font-size: larger;
 }
 
 .CSVN-beschrijving{
-    margin: 50px 0 0 50px;
+    margin: 50px 50px 0 50px;
     color: #9F9F9F;
     position: absolute;
+    text-align: left;
     bottom: 50px;
 }
 #CSVN-titel{
+    margin-top: 25px;
     color: #90a4ae;
     font-weight: bold;
     text-align: left;
@@ -118,6 +125,7 @@ a.btn-detail,.btn-detail {
     box-sizing: border-box;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
+
 .btn-large {
     font-size: 1.0625em;
     padding: 0.5625em 1.5em;
@@ -143,6 +151,16 @@ a.btn-detail,.btn-detail {
 }
 
 
+.btn-voted {
+    color: #B22222;
+    border-color: #B22222;
+}
+.btn-voted:hover {
+    background: #B22222;
+    color: #fff;
+    border-color: #B22222;
+}
+
 .card, .card-small{
     background: #E7E9E8;
     width: calc(100% / 3 - 6px);
@@ -155,7 +173,6 @@ a.btn-detail,.btn-detail {
 
 .card:hover, .card-small:hover{
     background: #BEC77E;
-
 }
 
 .card-small{
@@ -171,7 +188,6 @@ a.btn-detail,.btn-detail {
 
 rowcards{
     width: 100%;
-
 }
 
 .card-title{
