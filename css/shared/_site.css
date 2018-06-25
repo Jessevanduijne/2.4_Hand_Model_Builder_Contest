@@ -52,8 +52,8 @@ body
   bottom: 50px;
   right: 50px;
   z-index: 11;
-  border-color: red;
-  background-color: red;
+  border-color: #a63a11;
+  background-color: #a64b17;
   font-size: 30px;
   font-weight: bold;
   color: white;
@@ -70,7 +70,7 @@ body
   border: 5px;
   border-color: white;
   outline: 5px;
-  color: red;
+  color: #9fa617;
 }
 
 #get-snapshot

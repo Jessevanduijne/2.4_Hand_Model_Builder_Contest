@@ -141,7 +141,7 @@
             color: white;
             font-size: 110%
             "
-    >
+>
 
         <b> Klik hier voor meer informatie!</b>
     </a>
@@ -157,6 +157,8 @@
 
 
     <div id="Handen" class="tabcontent">
+        <p style="font-size: 150%;">Kies de stand van jouw hand:</p>
+
         <?php
         $files = glob("../models/*.obj");
         foreach ($files as $file) {
@@ -165,9 +167,13 @@
         ?>
     </div>
 
+
     <div id="Kleur" class="tabcontent">
-      <h2>Kleur</h2>
-    <form>
+        <p style="font-size: 150%;">Kies de kleur, tekst en afbeelding op jouw hand:</p>
+
+        <h2>Kleur</h2>
+
+        <form>
         Handkleur : <input type="color" id="changedColor" name="BGcolor" onchange="changeBGColor()"> </br>
         Standaard kleur : <input type="color" id="standardcolor" name="standardColor" onchange="changeStandardColor()">
       </form>
