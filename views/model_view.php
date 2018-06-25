@@ -206,7 +206,7 @@
         <section id="shareSection">
             <h3> Share je hand: </h3>
             <input type="image" id="facebookBtn" onclick="submitAndShare();" class="clickIcon" src="../img/fb.png"/>
-            <input type="image" id="tweetBtn" class="clickIcon" src="../img/twitter.png"/>
+            <input type="image" id="tweetBtn" onclick="tweetTweet();" class="clickIcon" src="../img/twitter.png"/>
         </section>
 
         <section id="top100section">
@@ -217,6 +217,8 @@
     </div>
 </div>
 </div>
+
+<button type="button" onclick=" window.open('https://www.geef.nl/nl/doneer?charity=962&ref=&referenceCode=website&amount=&fixedAmount=N','_blank')" id="donateButton">Doneer nu</button>
 
 <script>
 var standardColor = null;
@@ -311,6 +313,7 @@ var imgIndex = null;
 
     <!-- ... -->
     <script type="text/javascript" src="../scripts/facebook.js"></script>
+    <script type="text/javascript" src="../scripts/twitter.js"></script>
     <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
     <script type="text/javascript" src="../scripts/controllers/renderer.controller.js"></script>
     <script type="text/javascript" src="../scripts/controllers/object.controller.js"></script>

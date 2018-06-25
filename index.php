@@ -144,8 +144,8 @@
 </footer>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="bower_components/retina.js/dist/retina.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="bower_components/retina.js/dist/retina.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
