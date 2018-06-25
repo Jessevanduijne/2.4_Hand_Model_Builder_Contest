@@ -151,7 +151,7 @@
     <div class="tab col-lg-12" id="tab-bar">
         <button class="tablinks col-lg-3" onclick="openTab(event, 'Handen')" id="default"><b style="font-size: 130%;">Stap 1:</b><br />Handen</button>
         <button class="tablinks col-lg-3" onclick="openTab(event, 'Kleur')"><b style="font-size: 130%;">Stap 2:</b><br />Kleur</button>
-        <button class="tablinks col-lg-3" onclick="openTab(event, 'Share')">S<b style="font-size: 130%;">tap 3:</b><br />Share</button>
+        <button class="tablinks col-lg-3" onclick="openTab(event, 'Share')"><b style="font-size: 130%;">Stap 3:</b><br />Share</button>
         <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
     </div>
 
