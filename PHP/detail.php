@@ -107,23 +107,30 @@
         <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962"
            class="btn-green btn-detail btn-large">Doneer aan <br/> Child Surgery Vietnam</a><br/><br/>
 
-        <a target="_blank" id="" href="http://localhost/Project2.4/php/leaderbord.php"
+        <a style="font-size: 90%" _blank" id="" href="http://localhost/Project2.4/php/leaderbord.php"
            class="btn-green btn-detail btn-large">Bekijk de top 100 <br/> ontwikkelde handen</a><br/><br/>
+
+        <a style="font-size: 90%" target="_blank" id="" href="http://localhost/Project2.4/views/model_view.php"
+           class="btn-green btn-detail btn-large">Ontwerp je eigen <br/> 3D hand</a><br/><br/>
+
+        <a style="font-size: 90%" target="_blank" id="" href="http://localhost/Project2.4"
+           class="btn-green btn-detail btn-large">Meer informatie over <br/> deze campagne</a><br/><br/>
+
 
         <!--            <span class="hand-generik">Deel deze hand:</span>-->
         <div class="social-share"></div>
     </section>
 
-    <section class="CSVN-beschrijving hand-informatie">
-        <br/><span id="CSVN-titel">CHILD SURGERY VIETNAM </span/><br/>
-        De Nederlandse stichting 'Child Surgery Vietnam' helpt lichamelijk gehandicapte kinderen in Vietnam. Veel
-        kinderen gaan onnodig gehandicapt door het leven. De achterstand in orthopedische en plastische operaties kan
-        binnen 10 jaar worden weggewerkt. Met úw hulp lukt dat!
-
-        Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig
-        leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies
-        waar elke euro terecht komt.
-    </section>
+<!--    <section class="CSVN-beschrijving hand-informatie">-->
+<!--        <br/><span id="CSVN-titel">CHILD SURGERY VIETNAM </span/><br/>-->
+<!--        De Nederlandse stichting 'Child Surgery Vietnam' helpt lichamelijk gehandicapte kinderen in Vietnam. Veel-->
+<!--        kinderen gaan onnodig gehandicapt door het leven. De achterstand in orthopedische en plastische operaties kan-->
+<!--        binnen 10 jaar worden weggewerkt. Met úw hulp lukt dat!-->
+<!---->
+<!--        Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig-->
+<!--        leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies-->
+<!--        waar elke euro terecht komt.-->
+<!--    </section>-->
     <input type="image" id="facebookBtn" onclick="clickShare()" class="clickIcon" src="../img/fb.png"/>
     <input type="image" id="tweetBtn" onclick="tweetTweet()" class="clickIcon" src="../img/twitter.png"/>
 
