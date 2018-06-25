@@ -55,11 +55,11 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
-                    <h1>Personaliseer, deel, win!</h1>
-                    <p class="intro"><b>Personaliseer nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
+                    <h1>Ontwerp en help een handje!</h1>
+                    <p class="intro"><b>Ontwerp nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
                     <div id="button-wrapper">
-                        <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right ">personaliseer nu</a>
-                        <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large">Doneer</a>
+                        <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right" style="margin-left: -50px;">Ontwerp je 3D hand</a>
+                        <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962&ref=&referenceCode=website&amount=&fixedAmount=N" class="btn btn-accent btn-large">Doneer</a>
                         <a href="/Project2.4/php/leaderbord.php" class="btn btn-fill btn-large wedstrijd-btn">100 Handen Wedstrijd</a>
                     </div>
 
@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="down-arrow floating-arrow">Wat is Child Surgery Vietnam? <br />
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <i class="fa fa-angle-down"></i></div>
+<!--    <div class="down-arrow floating-arrow">Wat is Child Surgery Vietnam? <br />-->
+<!--        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
+<!--        <i class="fa fa-angle-down"></i></div>-->
 </section>
 
 <section class="white-bar">
@@ -89,7 +89,6 @@
 
                         In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies waar elke euro terecht komt. <br /><br />
                     </p>
-                    <a href="https://www.childsurgery-vietnam.org/doneren" target="_blank" class="btn btn-fill btn-large btn-margin-right">Doneer nu!</a>
                 </div>
             </div>
             <div class="col-md-4 intro-feature">
@@ -117,11 +116,11 @@
                     <p>Om deze campagne te steunen kun je op meerdere manieren helpen. Een daarvan is het personaliseren van
                         een 3D hand in de <a href="/Project2.4/views/model_view.php"> 3D omgeving</a>.
                         Deze hand kun je delen
-                        op social media en als je mee doet aan de <a href="#"> 100 Handen wedstrijd</a> ben jij misschien wel de winnar!
+                        op social media en als je mee doet aan de <a href="http://localhost/Project2.4/php/leaderbord.php"> 100 Handen wedstrijd</a> ben jij misschien wel de winnar!
                         <br/><br/>
 
                         Als je Child Surgery Vietnam en deze campagne direct wilt steunen kun je ook een
-                        <a href="https://www.childsurgery-vietnam.org/doneren" target="_blank">donatie doen</a>.
+                        <a href="https://www.geef.nl/nl/doneer?charity=962&ref=&referenceCode=website&amount=&fixedAmount=N" target="_blank">donatie doen</a>.
 
                     </p>
 

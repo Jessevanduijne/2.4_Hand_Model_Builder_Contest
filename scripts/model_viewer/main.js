@@ -5,7 +5,7 @@ var mouse = new THREE.Vector2();
 var camera;
 
 //The function that is run once when the page loads
-function init()
+function init(scale)
 {
     //Create a new (more flexible) GUI panel
     var gui;

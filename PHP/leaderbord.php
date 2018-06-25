@@ -63,20 +63,20 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="hero-content text-center">
                         <h1>Stem op jouw Favoriete hand!</h1>
-                        <p class="intro"><b>Personaliseer nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
+                        <p class="intro"><b>Ontwerp nu je eigen 3D hand en steun <i>Child Surgery Vietnam</i></b></p>
                         <div id="button-wrapper">
-                            <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right ">personaliseer nu</a>
-                            <a target="_blank" id="donate-button" href="https://www.childsurgery-vietnam.org/doneren" class="btn btn-accent btn-large">Doneer</a>
-                            <a href="/Project2.4/index.php" class="btn btn-fill btn-large wedstrijd-btn" > ‌‌ ‌‌ ‌‌ ‌ ‌‌ ‌‌ ‌ ‌‌ ‌‌‌Homepagina ‌‌ ‌‌ ‌ ‌‌ ‌‌ ‌‌ ‌‌</a>
+                            <a href="/Project2.4/views/model_view.php" class="btn btn-fill btn-large btn-margin-right " style="margin-left: -90px;">Ontwerp je eigen 3D hand</a>
+                            <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962&ref=&referenceCode=website&amount=&fixedAmount=N" class="btn btn-accent btn-large">Doneer</a>
+                            <a href="/Project2.4/index.php" class="btn btn-fill btn-large wedstrijd-btn" > ‌‌ ‌‌ ‌‌ ‌ ‌‌ ‌‌ ‌ ‌‌ Meer informatie ‌‌ ‌‌ ‌ ‌‌ ‌‌ ‌‌ ‌‌</a>
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-        <div class="down-arrow floating-arrow";">Bekijk de top 100 handen <br />
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <i class="fa fa-angle-down"></i></div>
+<!--        <div class="down-arrow floating-arrow";">Bekijk de top 100 handen <br />-->
+<!--            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
+<!--            <i class="fa fa-angle-down"></i></div>-->
     </section>
 
     <section class="white-bar">

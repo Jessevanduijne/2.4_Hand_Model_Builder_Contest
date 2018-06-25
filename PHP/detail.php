@@ -106,7 +106,7 @@
         <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962"
            class="btn-green btn-detail btn-large">Doneer aan <br/> Child Surgery Vietnam</a><br/><br/>
 
-        <a target="_blank" id="" href="https://www.geef.nl/nl/doneer?charity=962"
+        <a target="_blank" id="" href="http://localhost/Project2.4/php/leaderbord.php"
            class="btn-green btn-detail btn-large">Bekijk de top 100 <br/> ontwikkelde handen</a><br/><br/>
 
         <!--            <span class="hand-generik">Deel deze hand:</span>-->

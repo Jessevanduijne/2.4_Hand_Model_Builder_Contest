@@ -2,7 +2,7 @@
 //All functionality within this class is dedicated to manipulating the 1
 
 //Load the model (defined by path) into the desired scene
-function loadModel(scene, path, modelColor, scale,standardcolor = 0xffffff,  image = null, text = null) {
+function loadModel(scene, path, modelColor, scale, standardcolor = 0xffffff,  image = null, text = null) {
     //Create a new STLLoader
     var loader = new THREE.OBJLoader();
     //Load the STL-file using the path
@@ -38,7 +38,7 @@ function loadModel(scene, path, modelColor, scale,standardcolor = 0xffffff,  ima
 
 function updateModel(scene, modelColor){
     removeObject("loadedModel");
-    loadModel(scene, HARDCODED_3DMODEL_PATH, modelColor, 0.014);
+    loadModel(scene, HARDCODED_3DMODEL_PATH, modelColor, 0.03);
 }
 
 function UpdateMaterial(scene, standardColor, image, text){
