@@ -8,6 +8,9 @@
 
 require_once('admincheck.php');
 
+$str = file_get_contents("./config.json", true); //Krijg gegevens van config.json file
+$json = json_decode($str, true); // zet JSON om in een PHP-array
+
 ?>
 
 <html>
@@ -24,7 +27,7 @@ require_once('admincheck.php');
 <br/>
 <div class="container">
     <div class="header clearfix">
-        <h3 class="text-muted">100 Handen voor Vietnam - administratie.</h3>
+        <h3 class="text-muted">100 Handen voor Vietnam - <?php echo $json['Login']['username'] ?>.</h3>
     </div>
 
     <div class="jumbotron">
