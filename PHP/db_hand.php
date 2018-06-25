@@ -31,7 +31,7 @@ class dbHand
 
                 //echo $row->naam;
 
-                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->twitter, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -50,7 +50,7 @@ class dbHand
 
         if($result) {
             while ($row = $result->fetch_object()) {
-                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->twitter, $row->image, $row->object, $row->date);
                 array_push($hands, $hand);
             }
         }
@@ -65,7 +65,7 @@ class dbHand
 
         if($result){
             while($row = $result->fetch_object()){
-                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->image, $row->object, $row->date);
+                $hand = new hand($row->id, $row->handname, $row->naam, $row->email, $row->score, $row->facebook, $row->twitter, $row->image, $row->object, $row->date);
             }
             return $hand;
         }
@@ -86,6 +86,14 @@ class dbHand
         //$id = $this->MySQL->real_escape_string($id);
 
         $query = "UPDATE hands SET facebook = facebook + 1 WHERE id = $id";
+
+        $this->MySQL->query($query);
+    }
+
+    public function addTwitter($id){
+        //$id = $this->MySQL->real_escape_string($id);
+
+        $query = "UPDATE hands SET twitter = twitter + 1 WHERE id = $id";
 
         $this->MySQL->query($query);
     }

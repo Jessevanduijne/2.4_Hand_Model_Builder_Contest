@@ -34,12 +34,6 @@ require_once('admincheck.php');
             <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
         </p>
         <p>
-            <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
-        </p>
-        <p>
-            <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
-        </p>
-        <p>
             <a class="btn btn-medium btn-warning" href="adminlogout.php">uitloggen</a>
         </p>
     </div>
