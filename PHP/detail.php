@@ -92,11 +92,12 @@
 <body id="margin-nul-fix">
 <!-- Hierop wordt de hand gerenderd:-->
 <section id="scene"></section>
+
 <!--sidepanel-->
 <div id="mySidenav" class="sidenav scrollbar-primary">
 
     <section class="hand-informatie">
-        <span class="hand-handnaam"><?php echo $hand->getHandname(); ?></span><br/><br/>
+        <span class="hand-handnaam" id="handNam"><?php echo $hand->getHandname(); ?></span><br/><br/>
         <span class="hand-naam">Dit is de hand van <?php echo $hand->getNaam(); ?></span><br/><br/>
         <span class="hand-generik">Aantal keer op gestemd: <span
                     id="score"> <?php echo $hand->getScore(); ?></span> </span><br/>
@@ -123,13 +124,17 @@
         leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies
         waar elke euro terecht komt.
     </section>
-    <input type="image" id="facebookBtn" onclick="clickShare();" class="clickIcon" src="../img/fb.png"/>
+    <input type="image" id="facebookBtn" onclick="clickShare()" class="clickIcon" src="../img/fb.png"/>
+    <input type="image" id="tweetBtn" onclick="tweetTweet()" class="clickIcon" src="../img/twitter.png"/>
+
+    <div hidden id="handName"><?php $handId ?>;</div>
 </div>
 
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "500px";
     }
+
 
     openNav();
 
@@ -182,6 +187,7 @@
     <script type="text/javascript" src="../scripts/controllers/camera.controller.js"></script>
     <script type="text/javascript" src="../css/shared/_site.js"></script>
     <script type="text/javascript" src="../scripts/facebook.js"></script>
+    <script type="text/javascript" src="../scripts/twitter.js"></script>
 
     <script type="text/javascript" src="../scripts/model_viewer/main.js"></script>
 

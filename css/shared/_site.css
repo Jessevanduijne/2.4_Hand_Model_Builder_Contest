@@ -44,6 +44,35 @@ body
     z-index: 10;
 }
 
+#donateButton {
+  position: absolute;
+  border-radius: 50%;
+  width: 200px;
+  height: 100px;
+  bottom: 50px;
+  right: 50px;
+  z-index: 11;
+  border-color: red;
+  background-color: red;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  outline: none;
+}
+
+#donateButton:hover {
+  background-color: inherit;
+  border-style: solid
+  border: 5px;
+  border-color: white;
+  outline: 5px;
+  color: red;
+}
+
 #get-snapshot
 {
     position: absolute;
