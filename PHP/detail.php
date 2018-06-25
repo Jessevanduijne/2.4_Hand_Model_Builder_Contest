@@ -22,7 +22,7 @@
     //haal de hand op dmv de handId die mee wordt gepost.
     $hand = $db->getById($handId);
     //Check of een 'hand' wordt teruggegeven
-    if(!is_a($hand, "hand")){
+    if (!is_a($hand, "hand")) {
         //geen hand? Terugsturen naar de leaderbord.
         echo "<script> location.href='./leaderbord.php'; </script>";
         exit;
@@ -30,105 +30,126 @@
     ?>
 
     <!--Facebook-->
-    <meta property="og:url"                content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
-    <meta property="og:title"              content="<?php echo "Check de hand ".$hand->getHandname()." van ".$hand->getNaam() ?>" />
-    <meta property="og:description"        content="<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"  />
-    <meta property="og:image"              content="<?php echo 'http://552779.infhaarlem.nl/handimg/'.$hand->getImageRef() ?>" />
+    <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>"/>
+    <meta property="og:title"
+          content="<?php echo "Check de hand " . $hand->getHandname() . " van " . $hand->getNaam() ?>"/>
+    <meta property="og:description"
+          content="<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"/>
+    <meta property="og:image" content="<?php echo 'http://552779.infhaarlem.nl/handimg/' . $hand->getImageRef() ?>"/>
 
     <script>
-    // Onderstaande JS-code staat hier omdat het direct ingeladen moet worden als de pagina opent.
-    // Initialiseer Facebook Javascript-SDK:
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '400725930337109',
-            xfbml: true,
-            version: 'v2.10'
-        });
-        checkLoginState();
-    };
+        // Onderstaande JS-code staat hier omdat het direct ingeladen moet worden als de pagina opent.
+        // Initialiseer Facebook Javascript-SDK:
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '400725930337109',
+                xfbml: true,
+                version: 'v2.10'
+            });
+            checkLoginState();
+        };
 
-    // Laad de SDK in:
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        // Laad de SDK in:
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
-    function clickShare(){
-      var overrideUrl = "<?php echo $hand->getId(); ?>";
-      var overrideTitle = "<?php echo "Check de hand ".$hand->getHandname()." van ".$hand->getNaam() ?>";
-      var overrideDescription = "<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"
-      var overrideImage = "<?php echo 'http://552779.infhaarlem.nl/handimg/'.$hand->getImageRef() ?>";
+        function clickShare() {
+            var overrideUrl = "<?php echo $hand->getId(); ?>";
+            var overrideTitle = "<?php echo "Check de hand " . $hand->getHandname() . " van " . $hand->getNaam() ?>";
+            var overrideDescription = "<?php echo $hand->getNaam() ?> heeft een hand ontworpen. Ontwerp nu zelf je eigen hand en steun 100 Handen voor Vietnam!"
+            var overrideImage = "<?php echo 'http://552779.infhaarlem.nl/handimg/' . $hand->getImageRef() ?>";
 
-      shareDetail(overrideUrl, overrideTitle, overrideDescription, overrideImage);
-    }
+            shareDetail(overrideUrl, overrideTitle, overrideDescription, overrideImage);
+
+
+            var data = {
+                id: <?php echo $hand->getId(); ?>
+            }
+
+            $.ajax({
+                url: 'addfacebook.php',
+                type: 'POST',
+                data: data
+            });
+        }
     </script>
 </head>
 
 <body id="margin-nul-fix">
 <!-- Hierop wordt de hand gerenderd:-->
-    <section id="scene"></section>
+<section id="scene"></section>
 <!--sidepanel-->
-    <div id="mySidenav" class="sidenav scrollbar-primary">
+<div id="mySidenav" class="sidenav scrollbar-primary">
 
-        <section class="hand-informatie">
-            <span class="hand-handnaam"><?php echo $hand->getHandname();?></span><br/><br/>
-            <span class="hand-naam">Dit is de hand van <?php echo $hand->getNaam(); ?></span><br/><br/>
-            <span class="hand-generik">Aantal keer op gestemd: <span id="score"> <?php echo $hand->getScore(); ?></span> </span><br/>
+    <section class="hand-informatie">
+        <span class="hand-handnaam"><?php echo $hand->getHandname(); ?></span><br/><br/>
+        <span class="hand-naam">Dit is de hand van <?php echo $hand->getNaam(); ?></span><br/><br/>
+        <span class="hand-generik">Aantal keer op gestemd: <span
+                    id="score"> <?php echo $hand->getScore(); ?></span> </span><br/>
 
-            <a id="stemKnop" class="btn-detail btn-large btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/>
+        <a id="stemKnop" class="btn-detail btn-large btn-green" onclick="voteHand()">Stem op deze hand!</a><br/><br/>
 
-            <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962" class="btn-green btn-detail btn-large">Doneer aan <br/> Child Surgery Vietnam</a><br/><br/>
+        <a target="_blank" id="donate-button" href="https://www.geef.nl/nl/doneer?charity=962"
+           class="btn-green btn-detail btn-large">Doneer aan <br/> Child Surgery Vietnam</a><br/><br/>
 
-            <a target="_blank" id="" href="https://www.geef.nl/nl/doneer?charity=962" class="btn-green btn-detail btn-large">Bekijk de top 100 <br/> ontwikkelde handen</a><br/><br/>
+        <a target="_blank" id="" href="https://www.geef.nl/nl/doneer?charity=962"
+           class="btn-green btn-detail btn-large">Bekijk de top 100 <br/> ontwikkelde handen</a><br/><br/>
 
-<!--            <span class="hand-generik">Deel deze hand:</span>-->
-            <div class="social-share"></div>
-        </section>
+        <!--            <span class="hand-generik">Deel deze hand:</span>-->
+        <div class="social-share"></div>
+    </section>
 
-        <section class="CSVN-beschrijving hand-informatie">
-            <br/><span id="CSVN-titel">CHILD SURGERY VIETNAM </span/><br/>
-            De Nederlandse stichting 'Child Surgery Vietnam' helpt lichamelijk gehandicapte kinderen in Vietnam. Veel kinderen gaan onnodig gehandicapt door het leven. De achterstand in orthopedische en plastische operaties kan binnen 10 jaar worden weggewerkt. Met úw hulp lukt dat!
+    <section class="CSVN-beschrijving hand-informatie">
+        <br/><span id="CSVN-titel">CHILD SURGERY VIETNAM </span/><br/>
+        De Nederlandse stichting 'Child Surgery Vietnam' helpt lichamelijk gehandicapte kinderen in Vietnam. Veel
+        kinderen gaan onnodig gehandicapt door het leven. De achterstand in orthopedische en plastische operaties kan
+        binnen 10 jaar worden weggewerkt. Met úw hulp lukt dat!
 
-            Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies waar elke euro terecht komt.
-        </section>
-        <input type="image" id="facebookBtn" onclick="clickShare();" class="clickIcon" src="../img/fb.png"/>
-    </div>
+        Elke euro met zorg besteed In de arme streken van Vietnam krijgen veel kinderen geen kans op een menswaardig
+        leven. Terwijl de nodige ingrepen vaak nog geen €100,- kosten. Bij Child Surgery Vietnam weet u dan ook precies
+        waar elke euro terecht komt.
+    </section>
+    <input type="image" id="facebookBtn" onclick="clickShare();" class="clickIcon" src="../img/fb.png"/>
+</div>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "500px";
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "500px";
+    }
+
+    openNav();
+
+    function voteHand() {
+
+        var handId = <?php echo $handId ?>;
+
+        var score = document.getElementById("score").innerHTML;
+        var newScore = parseInt(score) + 1;
+
+        document.getElementById("score").innerText = newScore;
+        document.getElementById("stemKnop").innerText = "Stem opgenomen!";
+        document.getElementById("stemKnop").setAttribute('onclick', "");
+        document.getElementById("stemKnop").setAttribute('class', "btn-detail btn-large btn-voted");
+
+        // console.log("Recording vote...");
+
+        var data = {
+            'id': handId
         }
-        openNav();
 
-        function voteHand(){
-
-            var handId = <?php echo $handId ?>;
-
-            var score = document.getElementById("score").innerHTML;
-            var newScore = parseInt(score) + 1;
-
-            document.getElementById("score").innerText = newScore;
-            document.getElementById("stemKnop").innerText = "Stem opgenomen!";
-            document.getElementById("stemKnop").setAttribute('onclick', "");
-            document.getElementById("stemKnop").setAttribute('class', "btn-detail btn-large btn-voted");
-
-            // console.log("Recording vote...");
-
-            var data = {
-                'id': handId
-            }
-
-            $.ajax({
-                type: 'post',
-                url:'./addvote.php',
-                data: data
-                });
-        }
-    </script>
+        $.ajax({
+            type: 'post',
+            url: './addvote.php',
+            data: data
+        });
+    }
+</script>
 </body>
 
 
@@ -158,7 +179,7 @@
 
     <script type="text/javascript">
         updateModel(scene, DEFAULT_MODEL_COLOR);
-        HARDCODED_3DMODEL_PATH = "<?php echo '../content/user_screenshots/'.$hand->getObject() ?>";
+        HARDCODED_3DMODEL_PATH = "<?php echo '../content/user_screenshots/' . $hand->getObject() ?>";
         console.log(HARDCODED_3DMODEL_PATH);
     </script>
 

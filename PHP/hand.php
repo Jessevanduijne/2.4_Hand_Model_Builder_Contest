@@ -3,7 +3,7 @@ class hand
 {
     private $id, $handname, $naam, $email, $score, $image_ref, $object, $date;
 
-    public function __construct($id, $handname, $naam, $email, $score, $image_ref, $object, $date)
+    public function __construct($id, $handname, $naam, $email, $score, $facebook, $image_ref, $object, $date)
     {
         $this->id = $id;
         $this->handname = $handname;
@@ -28,6 +28,9 @@ class hand
     public function getId()
     {
         return $this->id;
+    }
+    public function getFacebook(){
+        return $this->facebook;
     }
     public function getDate()
     {

@@ -28,12 +28,17 @@ require_once('admincheck.php');
     </div>
 
     <div class="jumbotron">
-        <h1>Welkom, administrator!</h1>
+        <h1>Welkom, Jo!</h1>
         <p class="lead">Via de amdministratiepagina kunt u verschillende aspecten beheren. </p>
         <p>
             <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
         </p>
-
+        <p>
+            <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
+        </p>
+        <p>
+            <a class="btn btn-lg btn-success" href="./beheerhanden.php" role="button">Beheer alle gemaakte handen.</a>
+        </p>
         <p>
             <a class="btn btn-medium btn-warning" href="adminlogout.php">uitloggen</a>
         </p>
